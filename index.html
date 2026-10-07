@@ -1,24 +1,1241 @@
-Ji bhai ❤️🔥 dono ek hi website mein bana diye hain — Jewelry + Digital Products.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-Ready index.html file:
-📥 Download index.html
+<title>Digital Success Hub | Digital Business Mega Bundle</title>
 
-Ab GitHub mein ye karo:
+<meta name="description"
+content="Build your online business with one complete digital business toolkit.">
 
-1. Aapke screenshot wali code box mein jo purana text hai, poora delete karo.
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#070707;
+  color:white;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:92%;
+  max-width:1180px;
+  margin:auto;
+}
+
+/* NAVBAR */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(5,5,5,.94);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid #3d3010;
+}
+
+.nav{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:900;
+  color:#ffd45b;
+}
+
+.logo span{
+  display:block;
+  color:white;
+  font-size:10px;
+  letter-spacing:1.5px;
+  font-weight:500;
+}
+
+.navlinks{
+  display:flex;
+  gap:25px;
+  font-size:13px;
+  color:#ddd;
+}
+
+.navlinks a:hover{
+  color:#ffd45b;
+}
+
+.btn{
+  display:inline-block;
+  padding:15px 25px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#ffe17b,#eeb32c);
+  color:#080808;
+  font-weight:900;
+  box-shadow:0 8px 30px #eab52e40;
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 40px #eab52e70;
+}
+
+/* HERO */
+
+.hero{
+  min-height:720px;
+  display:flex;
+  align-items:center;
+  background:
+  linear-gradient(90deg,rgba(0,0,0,.96),rgba(0,0,0,.72)),
+  url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=85")
+  center/cover;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:450px;
+  height:450px;
+  right:-150px;
+  top:100px;
+  background:#e9ad2b;
+  filter:blur(150px);
+  opacity:.15;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:55px;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 15px;
+  border:1px solid #9b741c;
+  border-radius:30px;
+  color:#ffd75c;
+  background:#261e0b;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+.hero h1{
+  font-size:clamp(42px,5vw,70px);
+  line-height:1.02;
+  margin:22px 0;
+}
+
+.gold{
+  color:#f6c440;
+}
+
+.hero p{
+  color:#d0d0d0;
+  font-size:17px;
+  max-width:600px;
+}
+
+.points{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:25px 0;
+}
+
+.point{
+  background:#ffffff0b;
+  border:1px solid #ffffff15;
+  padding:9px 13px;
+  border-radius:10px;
+  font-size:12px;
+}
+
+.trust{
+  color:#aaa;
+  font-size:11px;
+  margin-top:15px;
+}
+
+/* PRODUCT MOCKUP */
+
+.mockup{
+  min-height:450px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.laptop{
+  width:82%;
+  max-width:500px;
+  background:#111;
+  border:2px solid #444;
+  border-radius:18px;
+  padding:14px;
+  transform:rotate(2deg);
+  box-shadow:
+  0 35px 70px #000,
+  0 0 60px #f0b62a30;
+}
+
+.screen{
+  background:
+  linear-gradient(#0008,#0008),
+  url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=85")
+  center/cover;
+  border-radius:10px;
+  min-height:290px;
+  padding:35px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.screen .crown{
+  font-size:45px;
+  color:#ffd24e;
+}
+
+.screen h2{
+  font-size:26px;
+}
+
+.screen strong{
+  font-size:30px;
+  color:#ffd24e;
+  line-height:1.1;
+}
+
+.book{
+  position:absolute;
+  width:145px;
+  height:195px;
+  border-radius:8px;
+  padding:20px 12px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:center;
+  font-weight:900;
+  box-shadow:0 20px 35px #000;
+}
+
+.book small{
+  display:block;
+  margin-top:20px;
+  color:#ddd;
+  font-size:10px;
+}
+
+.book1{
+  left:0;
+  bottom:25px;
+  background:linear-gradient(145deg,#193b65,#071321);
+  transform:rotate(-8deg);
+}
+
+.book2{
+  right:0;
+  bottom:30px;
+  background:linear-gradient(145deg,#11635d,#061d1b);
+  transform:rotate(8deg);
+}
+
+.book3{
+  right:19%;
+  top:0;
+  background:linear-gradient(145deg,#242b59,#080a18);
+  transform:rotate(4deg);
+}
+
+/* WHITE SECTION */
+
+.white{
+  background:#fff;
+  color:#111;
+}
+
+.section{
+  padding:90px 0;
+}
+
+.eyebrow{
+  color:#a8780c;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1.5px;
+}
+
+.section h2{
+  font-size:clamp(34px,4vw,52px);
+  line-height:1.08;
+  margin:8px 0 15px;
+}
+
+.intro{
+  max-width:680px;
+  color:#666;
+}
+
+/* PRODUCTS */
+
+.products{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+  margin-top:45px;
+}
+
+.product{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  background:#fff;
+  border:1px solid #e8e8e8;
+  border-radius:20px;
+  padding:27px;
+  box-shadow:0 15px 35px #0000000b;
+  transition:.25s;
+}
+
+.product:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 45px #00000018;
+}
+
+.product h3{
+  margin-bottom:10px;
+}
+
+.product ul{
+  padding-left:18px;
+  color:#666;
+  font-size:14px;
+}
+
+.mini-book{
+  min-width:110px;
+  height:150px;
+  border-radius:7px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(145deg,#172f52,#07101d);
+  color:white;
+  font-weight:900;
+  box-shadow:0 15px 25px #0003;
+}
+
+/* FEATURE CARDS */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  margin-top:40px;
+}
+
+.card{
+  padding:25px;
+  background:#fafafa;
+  border:1px solid #eee;
+  border-radius:18px;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.icon{
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:#fff0bd;
+  color:#986b00;
+  font-size:22px;
+  margin-bottom:15px;
+}
+
+.card p{
+  color:#666;
+  font-size:13px;
+}
+
+/* DARK BENEFITS */
+
+.dark{
+  background:#0a0a0a;
+  color:white;
+}
+
+.dark .intro{
+  color:#aaa;
+}
+
+.benefits{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
+}
+
+.benefit-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.benefit{
+  padding:22px;
+  border:1px solid #292929;
+  border-radius:16px;
+  background:#111;
+}
+
+.benefit b{
+  display:block;
+  margin-bottom:6px;
+}
+
+.benefit span{
+  color:#aaa;
+  font-size:13px;
+}
+
+/* PHOTO SECTION */
+
+.photo-section{
+  min-height:480px;
+  display:flex;
+  align-items:center;
+  background:
+  linear-gradient(90deg,#000e 20%,#0008 60%,#0003),
+  url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=85")
+  center/cover;
+}
+
+.photo-box{
+  max-width:600px;
+}
+
+.photo-box h2{
+  font-size:50px;
+  line-height:1.05;
+  margin:12px 0;
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:40px;
+}
+
+.testimonial{
+  background:white;
+  border-radius:18px;
+  padding:28px;
+  box-shadow:0 12px 30px #0000000b;
+}
+
+.stars{
+  color:#f2b51e;
+  letter-spacing:3px;
+}
+
+.testimonial p{
+  color:#555;
+  font-size:14px;
+  margin:15px 0;
+}
+
+/* FAQ */
+
+.faq{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:35px;
+}
+
+.faq-item{
+  padding:25px;
+  border:1px solid #292929;
+  border-radius:15px;
+  background:#111;
+}
+
+.faq-item h3{
+  color:#ffd45b;
+  margin-bottom:8px;
+}
+
+.faq-item p{
+  color:#aaa;
+  font-size:14px;
+}
+
+/* CTA */
+
+.cta-wrap{
+  padding:70px 0;
+  background:white;
+}
+
+.cta{
+  border-radius:25px;
+  padding:45px;
+  background:
+  linear-gradient(100deg,#171717,#050505),
+  url("https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1500&q=80")
+  center/cover;
+  border:1px solid #4c3b0d;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+}
+
+.cta h2{
+  font-size:38px;
+  line-height:1.1;
+}
+
+/* FOOTER */
+
+footer{
+  padding:40px 0;
+  background:#050505;
+  border-top:1px solid #2c220c;
+  color:#aaa;
+}
+
+.footer{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+  .navlinks{
+    display:none;
+  }
+
+  .hero{
+    padding:70px 0;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .mockup{
+    min-height:400px;
+  }
+
+  .products,
+  .benefits{
+    grid-template-columns:1fr;
+  }
+
+  .cards{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .testimonials{
+    grid-template-columns:1fr;
+  }
+
+  .faq{
+    grid-template-columns:1fr;
+  }
+
+  .cta{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+@media(max-width:520px){
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .laptop{
+    width:90%;
+  }
+
+  .screen{
+    min-height:230px;
+    padding:20px;
+  }
+
+  .screen strong{
+    font-size:22px;
+  }
+
+  .book{
+    width:105px;
+    height:145px;
+    font-size:11px;
+  }
+
+  .book3{
+    right:10%;
+  }
+
+  .cta{
+    padding:28px;
+  }
+
+  .cta h2{
+    font-size:29px;
+  }
+
+  .footer{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+<div class="container nav">
+
+<a href="#" class="logo">
+👑 Digital Success Hub
+<span>LEARN • CREATE • EARN • GROW</span>
+</a>
+
+<nav class="navlinks">
+<a href="#home">Home</a>
+<a href="#included">What's Included</a>
+<a href="#benefits">Benefits</a>
+<a href="#reviews">Reviews</a>
+<a href="#faq">FAQ</a>
+</nav>
+
+<a href="#buy" class="btn">Get Your Bundle →</a>
+
+</div>
+</header>
 
 
-2. Download ki hui index.html file ko open karke poora code copy karo.
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="container hero-grid">
+
+<div>
+
+<span class="badge">
+DIGITAL BUSINESS MEGA BUNDLE
+</span>
+
+<h1>
+Build Your Online Business With One Complete
+<span class="gold">Digital Toolkit</span>
+</h1>
+
+<p>
+Stop searching for separate resources. Get eBooks, templates,
+AI prompts, business planners, social-media content and
+product-listing resources — all organized in one powerful bundle.
+</p>
+
+<div class="points">
+
+<div class="point">⚡ Save Time & Money</div>
+<div class="point">✓ Ready-to-Use</div>
+<div class="point">👤 Beginner Friendly</div>
+<div class="point">∞ Lifetime Access</div>
+
+</div>
+
+<a href="#buy" class="btn">
+🛒 Get Instant Access Now →
+</a>
+
+<div class="trust">
+🔒 Secure Payment &nbsp; | &nbsp; ⚡ Instant Download
+</div>
+
+</div>
 
 
-3. GitHub ke code box mein paste karo.
+<div class="mockup">
+
+<div class="laptop">
+
+<div class="screen">
+
+<div class="crown">♛</div>
+
+<h2>Digital Success Hub</h2>
+
+<strong>
+DIGITAL BUSINESS<br>
+MEGA BUNDLE
+</strong>
+
+<p>
+Learn • Create • Earn • Grow
+</p>
+
+</div>
+
+</div>
+
+<div class="book book1">
+STARTER<br>GUIDE
+<small>
+Business • Marketing • Action Plan
+</small>
+</div>
+
+<div class="book book2">
+TEMPLATE<br>PACK
+<small>
+Social Media • Offers • Posts
+</small>
+</div>
+
+<div class="book book3">
+AI PROMPTS<br>100
+<small>
+Content • Sales • Ideas
+</small>
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 
-4. Commit changes… dabao.
+<!-- WHAT'S INCLUDED -->
+
+<section class="section white" id="included">
+
+<div class="container">
+
+<div class="eyebrow">
+WHAT'S INCLUDED
+</div>
+
+<h2>
+Everything You Need to<br>
+Build, Grow & Earn Online
+</h2>
+
+<p class="intro">
+A practical collection of resources designed to help you
+create, organize and market a digital business without
+hunting for separate tools.
+</p>
 
 
-5. Phir Commit changes confirm karo.
+<div class="products">
 
 
+<div class="product">
 
-⚠️ Ek important cheez: code mein WhatsApp number abhi 918445291334 hai. Website publish hone se pehle apna WhatsApp number us jagah dalna hoga.
+<div>
+
+<h3>
+01 — Digital Business Starter Guide
+</h3>
+
+<ul>
+<li>Beginner-friendly business guidance</li>
+<li>Product creation ideas</li>
+<li>Marketing fundamentals</li>
+<li>30-day action plan</li>
+</ul>
+
+</div>
+
+<div class="mini-book">
+STARTER<br>GUIDE
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div>
+
+<h3>
+02 — Canva-Style Template Pack
+</h3>
+
+<ul>
+<li>Social-media designs</li>
+<li>Promotional posts</li>
+<li>Checklists & testimonials</li>
+<li>Offers & educational posts</li>
+</ul>
+
+</div>
+
+<div class="mini-book">
+TEMPLATE<br>PACK
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div>
+
+<h3>
+03 — 100 AI Prompts
+</h3>
+
+<ul>
+<li>Content creation</li>
+<li>Marketing & sales</li>
+<li>Product ideas</li>
+<li>Customer engagement</li>
+</ul>
+
+</div>
+
+<div class="mini-book">
+AI<br>PROMPTS<br>100
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div>
+
+<h3>
+04 — Business Planner
+</h3>
+
+<ul>
+<li>Task planner</li>
+<li>Sales tracker</li>
+<li>Goal setting</li>
+<li>Content & expense tracker</li>
+</ul>
+
+</div>
+
+<div class="mini-book">
+BUSINESS<br>PLANNER
+</div>
+
+</div>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">📖</div>
+<h3>eBooks & Guides</h3>
+<p>Practical learning resources.</p>
+</div>
+
+<div class="card">
+<div class="icon">▣</div>
+<h3>Templates</h3>
+<p>Ready-to-customize assets.</p>
+</div>
+
+<div class="card">
+<div class="icon">⚙</div>
+<h3>AI Prompts</h3>
+<p>Speed up your content work.</p>
+</div>
+
+<div class="card">
+<div class="icon">📱</div>
+<h3>Social Media Content</h3>
+<p>Ideas for consistent posting.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BENEFITS -->
+
+<section class="section dark" id="benefits">
+
+<div class="container benefits">
+
+<div>
+
+<div class="eyebrow">
+WHY CHOOSE THIS BUNDLE?
+</div>
+
+<h2>
+Your Shortcut to
+<span class="gold">Online Success</span>
+</h2>
+
+<p class="intro">
+Skip the confusion and get your essential digital-business
+resources in one place. Everything is designed to help you
+take action faster.
+</p>
+
+<br>
+
+<a href="#buy" class="btn">
+Start Building Today →
+</a>
+
+</div>
+
+
+<div class="benefit-grid">
+
+<div class="benefit">
+<b>🚀 Step-by-Step Guidance</b>
+<span>Simple resources for beginners.</span>
+</div>
+
+<div class="benefit">
+<b>✎ Editable Templates</b>
+<span>Customize for your own brand.</span>
+</div>
+
+<div class="benefit">
+<b>∞ Lifetime Access</b>
+<span>Keep your toolkit available.</span>
+</div>
+
+<div class="benefit">
+<b>💰 More Value</b>
+<span>One bundle, many resources.</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PHOTO / STORY SECTION -->
+
+<section class="photo-section">
+
+<div class="container">
+
+<div class="photo-box">
+
+<div class="eyebrow">
+YOUR DIGITAL BUSINESS STARTS HERE
+</div>
+
+<h2>
+Turn Your Ideas Into a
+<span class="gold">Digital Business.</span>
+</h2>
+
+<p>
+Learn the basics, create useful digital products,
+organize your work and start building your online
+presence with one complete toolkit.
+</p>
+
+<br>
+
+<a href="#buy" class="btn">
+Get Started Now →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TESTIMONIALS -->
+
+<section class="section white" id="reviews">
+
+<div class="container">
+
+<div class="eyebrow">
+REAL PEOPLE. REAL FEEDBACK.
+</div>
+
+<h2>
+What Our Customers Say
+</h2>
+
+
+<div class="testimonials">
+
+
+<div class="testimonial">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“Everything is well organized and super easy to use.
+I finally had a clear starting point for my online business.”
+</p>
+
+<b>— Sarah K.</b>
+
+</div>
+
+
+<div class="testimonial">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“The templates and AI prompts saved me so much time
+and gave me ideas for consistent social content.”
+</p>
+
+<b>— Ali Raza</b>
+
+</div>
+
+
+<div class="testimonial">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“Perfect for beginners. The step-by-step resources
+make everything feel much simpler.”
+</p>
+
+<b>— Ayesha Malik</b>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="section dark" id="faq">
+
+<div class="container">
+
+<div class="eyebrow">
+FAQ
+</div>
+
+<h2>
+Questions? We've Got You.
+</h2>
+
+
+<div class="faq">
+
+<div class="faq-item">
+
+<h3>
+Is it beginner friendly?
+</h3>
+
+<p>
+Yes. The bundle is organized with simple,
+practical resources for beginners.
+</p>
+
+</div>
+
+
+<div class="faq-item">
+
+<h3>
+Can I edit the templates?
+</h3>
+
+<p>
+Yes. The template resources are designed
+to be customized.
+</p>
+
+</div>
+
+
+<div class="faq-item">
+
+<h3>
+How do I receive it?
+</h3>
+
+<p>
+After purchase, your delivery or download
+process can be connected to your payment system.
+</p>
+
+</div>
+
+
+<div class="faq-item">
+
+<h3>
+Is payment secure?
+</h3>
+
+<p>
+Connect your preferred trusted payment provider
+to the purchase button.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FINAL CTA -->
+
+<section class="cta-wrap" id="buy">
+
+<div class="container">
+
+<div class="cta">
+
+<div>
+
+<div class="eyebrow">
+DON'T MISS THE OPPORTUNITY
+</div>
+
+<h2>
+Get the Digital Business Mega Bundle
+Today & Start Your Online Journey!
+</h2>
+
+<p style="color:#aaa">
+One bundle. Endless possibilities.
+Your success starts with action.
+</p>
+
+</div>
+
+<a
+class="btn"
+href="https://wa.me/918445291334text=I%20want%20the%20Digital%20Business%20Mega%20Bundle"
+target="_blank">
+
+🛒 Get Instant Access Now →
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container footer">
+
+<div>
+
+<b style="color:white;font-size:17px">
+👑 Digital Success Hub
+</b>
+
+<br>
+
+Learn • Create • Earn • Grow
+
+</div>
+
+
+<div>
+© 2026 Digital Success Hub.
+All rights reserved.
+</div>
+
+</div>
+
+</footer>
+
+
+</body>
+  </html>
