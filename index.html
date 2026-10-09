@@ -1,1241 +1,423 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Digital Success Hub | Digital Business Mega Bundle</title>
-
-<meta name="description"
-content="Build your online business with one complete digital business toolkit.">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080a0f">
+<meta name="description" content="Shop digital business guides, templates, AI prompts, planners and social media resources at Hotpicka Digital Products.">
+<title>Hotpicka Digital Products | Learn • Create • Earn • Grow</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#070707;
-  color:white;
-  line-height:1.6;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-.container{
-  width:92%;
-  max-width:1180px;
-  margin:auto;
-}
-
-/* NAVBAR */
-
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(5,5,5,.94);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid #3d3010;
-}
-
-.nav{
-  min-height:72px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-
-.logo{
-  font-size:20px;
-  font-weight:900;
-  color:#ffd45b;
-}
-
-.logo span{
-  display:block;
-  color:white;
-  font-size:10px;
-  letter-spacing:1.5px;
-  font-weight:500;
-}
-
-.navlinks{
-  display:flex;
-  gap:25px;
-  font-size:13px;
-  color:#ddd;
-}
-
-.navlinks a:hover{
-  color:#ffd45b;
-}
-
-.btn{
-  display:inline-block;
-  padding:15px 25px;
-  border-radius:12px;
-  background:linear-gradient(135deg,#ffe17b,#eeb32c);
-  color:#080808;
-  font-weight:900;
-  box-shadow:0 8px 30px #eab52e40;
-  transition:.25s;
-}
-
-.btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 12px 40px #eab52e70;
-}
-
+:root{--bg:#080a0f;--panel:#111620;--gold:#f6c453;--white:#fff;--muted:#b8bdc8;--line:#ffffff18}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--white);line-height:1.65}
+img{width:100%;height:100%;object-fit:cover;display:block}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+.container{width:min(1200px,92%);margin:auto}
+section{padding:75px 0}
+h1,h2,h3{line-height:1.2}
+.gold{color:var(--gold)}
+.muted{color:var(--muted)}
+.btn{display:inline-block;padding:13px 23px;border-radius:40px;background:linear-gradient(120deg,#ffe6a0,#e8ad27);color:#111;font-weight:800;border:0;transition:.2s}
+.btn:hover{transform:translateY(-3px)}
+.outline{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+.heading{text-align:center;margin-bottom:36px}
+.heading .eyebrow{color:var(--gold);font-size:12px;letter-spacing:3px;font-weight:800}
+.heading h2{font-size:clamp(27px,4vw,42px);margin:10px 0}
+.heading p{color:var(--muted);max-width:650px;margin:auto}
+/* NAVIGATION */
+header{position:sticky;top:0;z-index:20;background:#080a0ff2;backdrop-filter:blur(15px);border-bottom:1px solid #f6c45366}
+nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{font-size:38px;color:var(--gold);line-height:1}
+.brand strong{display:block;font-size:22px;font-weight:900}
+.brand small{display:block;color:var(--gold);font-size:10px;letter-spacing:1.8px}
+.navlinks{display:flex;align-items:center;gap:22px;font-size:13px;font-weight:600}
+.navlinks a:hover{color:var(--gold)}
+.menu{display:none;background:transparent;color:white;border:1px solid var(--line);padding:8px 12px;border-radius:9px}
 /* HERO */
-
-.hero{
-  min-height:720px;
-  display:flex;
-  align-items:center;
-  background:
-  linear-gradient(90deg,rgba(0,0,0,.96),rgba(0,0,0,.72)),
-  url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=85")
-  center/cover;
-  position:relative;
-  overflow:hidden;
-}
-
-.hero:after{
-  content:"";
-  position:absolute;
-  width:450px;
-  height:450px;
-  right:-150px;
-  top:100px;
-  background:#e9ad2b;
-  filter:blur(150px);
-  opacity:.15;
-}
-
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  gap:55px;
-  align-items:center;
-  position:relative;
-  z-index:2;
-}
-
-.badge{
-  display:inline-block;
-  padding:8px 15px;
-  border:1px solid #9b741c;
-  border-radius:30px;
-  color:#ffd75c;
-  background:#261e0b;
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:1px;
-}
-
-.hero h1{
-  font-size:clamp(42px,5vw,70px);
-  line-height:1.02;
-  margin:22px 0;
-}
-
-.gold{
-  color:#f6c440;
-}
-
-.hero p{
-  color:#d0d0d0;
-  font-size:17px;
-  max-width:600px;
-}
-
-.points{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin:25px 0;
-}
-
-.point{
-  background:#ffffff0b;
-  border:1px solid #ffffff15;
-  padding:9px 13px;
-  border-radius:10px;
-  font-size:12px;
-}
-
-.trust{
-  color:#aaa;
-  font-size:11px;
-  margin-top:15px;
-}
-
-/* PRODUCT MOCKUP */
-
-.mockup{
-  min-height:450px;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.laptop{
-  width:82%;
-  max-width:500px;
-  background:#111;
-  border:2px solid #444;
-  border-radius:18px;
-  padding:14px;
-  transform:rotate(2deg);
-  box-shadow:
-  0 35px 70px #000,
-  0 0 60px #f0b62a30;
-}
-
-.screen{
-  background:
-  linear-gradient(#0008,#0008),
-  url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=85")
-  center/cover;
-  border-radius:10px;
-  min-height:290px;
-  padding:35px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-
-.screen .crown{
-  font-size:45px;
-  color:#ffd24e;
-}
-
-.screen h2{
-  font-size:26px;
-}
-
-.screen strong{
-  font-size:30px;
-  color:#ffd24e;
-  line-height:1.1;
-}
-
-.book{
-  position:absolute;
-  width:145px;
-  height:195px;
-  border-radius:8px;
-  padding:20px 12px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  text-align:center;
-  font-weight:900;
-  box-shadow:0 20px 35px #000;
-}
-
-.book small{
-  display:block;
-  margin-top:20px;
-  color:#ddd;
-  font-size:10px;
-}
-
-.book1{
-  left:0;
-  bottom:25px;
-  background:linear-gradient(145deg,#193b65,#071321);
-  transform:rotate(-8deg);
-}
-
-.book2{
-  right:0;
-  bottom:30px;
-  background:linear-gradient(145deg,#11635d,#061d1b);
-  transform:rotate(8deg);
-}
-
-.book3{
-  right:19%;
-  top:0;
-  background:linear-gradient(145deg,#242b59,#080a18);
-  transform:rotate(4deg);
-}
-
-/* WHITE SECTION */
-
-.white{
-  background:#fff;
-  color:#111;
-}
-
-.section{
-  padding:90px 0;
-}
-
-.eyebrow{
-  color:#a8780c;
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:1.5px;
-}
-
-.section h2{
-  font-size:clamp(34px,4vw,52px);
-  line-height:1.08;
-  margin:8px 0 15px;
-}
-
-.intro{
-  max-width:680px;
-  color:#666;
-}
-
+.hero{padding:45px 0 65px;background:radial-gradient(ellipse at 85% 25%,#80561e45,transparent 48%),#090b10}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center}
+.hero h1{font-size:clamp(42px,6vw,76px);letter-spacing:-3px;margin:15px 0}
+.hero h1 span{color:var(--gold)}
+.hero-copy{color:#d0d2d9;font-size:17px;margin-bottom:22px}
+.pill{display:inline-block;border:1px solid #f6c45388;color:var(--gold);border-radius:30px;padding:5px 12px;font-size:11px;font-weight:800;letter-spacing:1px}
+.benefits{display:flex;flex-wrap:wrap;gap:10px 18px;margin:23px 0;font-size:12px}
+.benefits span:first-letter{color:var(--gold)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-visual{height:480px;position:relative;border:1px solid #f6c45377;border-radius:23px;overflow:hidden}
+.hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#050609dd,transparent 68%)}
+.hero-visual img{object-position:center}
+.hero-label{position:absolute;z-index:2;bottom:24px;left:24px;right:24px}
+.hero-label h2{font-size:28px}
+.hero-label p{color:#eee;font-size:13px}
+.photo-credit{font-size:10px;color:#bbb;margin-top:8px}
+/* TRUST */
+.trust{background:#10131a;border-block:1px solid var(--line)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;padding:24px 0}
+.trust-item{text-align:center}
+.trust-item .icon{font-size:28px;color:var(--gold)}
+.trust-item strong{display:block;font-size:14px}
+.trust-item small{color:var(--muted);font-size:11px}
 /* PRODUCTS */
-
-.products{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
-  margin-top:45px;
-}
-
-.product{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  background:#fff;
-  border:1px solid #e8e8e8;
-  border-radius:20px;
-  padding:27px;
-  box-shadow:0 15px 35px #0000000b;
-  transition:.25s;
-}
-
-.product:hover{
-  transform:translateY(-6px);
-  box-shadow:0 20px 45px #00000018;
-}
-
-.product h3{
-  margin-bottom:10px;
-}
-
-.product ul{
-  padding-left:18px;
-  color:#666;
-  font-size:14px;
-}
-
-.mini-book{
-  min-width:110px;
-  height:150px;
-  border-radius:7px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background:linear-gradient(145deg,#172f52,#07101d);
-  color:white;
-  font-weight:900;
-  box-shadow:0 15px 25px #0003;
-}
-
-/* FEATURE CARDS */
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-  margin-top:40px;
-}
-
-.card{
-  padding:25px;
-  background:#fafafa;
-  border:1px solid #eee;
-  border-radius:18px;
-  transition:.25s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-}
-
-.icon{
-  width:48px;
-  height:48px;
-  display:grid;
-  place-items:center;
-  border-radius:14px;
-  background:#fff0bd;
-  color:#986b00;
-  font-size:22px;
-  margin-bottom:15px;
-}
-
-.card p{
-  color:#666;
-  font-size:13px;
-}
-
-/* DARK BENEFITS */
-
-.dark{
-  background:#0a0a0a;
-  color:white;
-}
-
-.dark .intro{
-  color:#aaa;
-}
-
-.benefits{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:55px;
-  align-items:center;
-}
-
-.benefit-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-}
-
-.benefit{
-  padding:22px;
-  border:1px solid #292929;
-  border-radius:16px;
-  background:#111;
-}
-
-.benefit b{
-  display:block;
-  margin-bottom:6px;
-}
-
-.benefit span{
-  color:#aaa;
-  font-size:13px;
-}
-
-/* PHOTO SECTION */
-
-.photo-section{
-  min-height:480px;
-  display:flex;
-  align-items:center;
-  background:
-  linear-gradient(90deg,#000e 20%,#0008 60%,#0003),
-  url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=85")
-  center/cover;
-}
-
-.photo-box{
-  max-width:600px;
-}
-
-.photo-box h2{
-  font-size:50px;
-  line-height:1.05;
-  margin:12px 0;
-}
-
+.products{background:#0b0d13}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{border:1px solid var(--line);background:linear-gradient(145deg,#171c27,#0c0f15);border-radius:17px;overflow:hidden;transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:#f6c45399}
+.card-photo{height:230px;position:relative;overflow:hidden;background:#191d27}
+.card-photo img{transition:transform .4s}
+.card:hover .card-photo img{transform:scale(1.05)}
+.tag{position:absolute;top:12px;left:12px;background:var(--gold);color:#111;font-size:10px;font-weight:900;border-radius:20px;padding:5px 10px}
+.card-body{padding:20px}
+.card-body h3{font-size:19px;margin-bottom:9px}
+.card-body p{color:var(--muted);font-size:13px;min-height:58px}
+.card-body ul{list-style:none;font-size:12px;margin-top:13px;color:#e2e2e2}
+.card-body li{margin:5px 0}
+.card-body li:before{content:"✓ ";color:var(--gold);font-weight:900}
+.card-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:17px}
+.card-bottom a{font-size:12px;padding:9px 14px}
+.card-bottom small{color:var(--gold);font-weight:700}
+/* PHOTO GALLERY */
+.gallery{background:#0e1118}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.gallery-item{height:220px;border-radius:15px;overflow:hidden;position:relative;border:1px solid var(--line)}
+.gallery-item img{transition:.4s}
+.gallery-item:hover img{transform:scale(1.07)}
+.gallery-item span{position:absolute;bottom:0;left:0;right:0;padding:30px 13px 12px;background:linear-gradient(transparent,#000e);font-weight:800;font-size:14px}
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center}
+.about-photo{height:390px;border-radius:20px;overflow:hidden;border:1px solid #f6c45366}
+.about-copy h2{font-size:clamp(30px,4vw,44px);margin:12px 0}
+.about-copy p{color:var(--muted);margin:15px 0}
+.check-list{list-style:none;margin:22px 0}
+.check-list li{padding:7px 0;font-size:13px}
+.check-list li:before{content:"✓";color:var(--gold);font-weight:900;margin-right:12px}
+/* PROCESS */
+.process{background:#11151e}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.process-card{text-align:center;padding:26px 20px;border:1px solid var(--line);border-radius:16px}
+.process-card .number{font-size:29px;color:var(--gold);font-weight:900}
+.process-card h3{margin:10px 0}
+.process-card p{font-size:13px;color:var(--muted)}
 /* TESTIMONIALS */
-
-.testimonials{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-  margin-top:40px;
-}
-
-.testimonial{
-  background:white;
-  border-radius:18px;
-  padding:28px;
-  box-shadow:0 12px 30px #0000000b;
-}
-
-.stars{
-  color:#f2b51e;
-  letter-spacing:3px;
-}
-
-.testimonial p{
-  color:#555;
-  font-size:14px;
-  margin:15px 0;
-}
-
-/* FAQ */
-
-.faq{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-  margin-top:35px;
-}
-
-.faq-item{
-  padding:25px;
-  border:1px solid #292929;
-  border-radius:15px;
-  background:#111;
-}
-
-.faq-item h3{
-  color:#ffd45b;
-  margin-bottom:8px;
-}
-
-.faq-item p{
-  color:#aaa;
-  font-size:14px;
-}
-
+.reviews{background:#0b0d13}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review{padding:24px;border:1px solid var(--line);border-radius:17px;background:#121620}
+.stars{color:var(--gold);letter-spacing:3px}
+.review p{color:#e0e2e8;font-size:13px;margin:14px 0}
+.review strong{font-size:13px}
+.review small{display:block;color:var(--muted);font-size:11px}
 /* CTA */
-
-.cta-wrap{
-  padding:70px 0;
-  background:white;
-}
-
-.cta{
-  border-radius:25px;
-  padding:45px;
-  background:
-  linear-gradient(100deg,#171717,#050505),
-  url("https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1500&q=80")
-  center/cover;
-  border:1px solid #4c3b0d;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:30px;
-}
-
-.cta h2{
-  font-size:38px;
-  line-height:1.1;
-}
-
+.cta{padding:60px 0;background:linear-gradient(120deg,#30220c,#11141b 65%);border-block:1px solid #f6c45366;text-align:center}
+.cta h2{font-size:clamp(28px,4vw,43px);margin:12px 0}
+.cta p{color:#d1d1d1;margin:0 auto 23px;max-width:650px}
+/* FAQ */
+.faq-list{max-width:800px;margin:auto}
+details{padding:18px 5px;border-bottom:1px solid var(--line)}
+summary{font-weight:700;cursor:pointer}
+details p{color:var(--muted);font-size:13px;padding-top:12px}
 /* FOOTER */
-
-footer{
-  padding:40px 0;
-  background:#050505;
-  border-top:1px solid #2c220c;
-  color:#aaa;
-}
-
-.footer{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-}
-
-/* MOBILE */
-
+footer{padding:45px 0 20px;background:#06070b}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px}
+footer h3{font-size:14px;margin-bottom:13px;color:var(--gold)}
+footer p,footer a{font-size:12px;color:var(--muted)}
+footer a{display:block;margin:8px 0}
+footer a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid var(--line);margin-top:32px;padding-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:11px}
 @media(max-width:850px){
-
-  .navlinks{
-    display:none;
-  }
-
-  .hero{
-    padding:70px 0;
-  }
-
-  .hero-grid{
-    grid-template-columns:1fr;
-  }
-
-  .mockup{
-    min-height:400px;
-  }
-
-  .products,
-  .benefits{
-    grid-template-columns:1fr;
-  }
-
-  .cards{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .testimonials{
-    grid-template-columns:1fr;
-  }
-
-  .faq{
-    grid-template-columns:1fr;
-  }
-
-  .cta{
-    flex-direction:column;
-    align-items:flex-start;
-  }
+ .navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:#0b0d13;padding:22px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:18px}
+ .navlinks.open{display:flex}.menu{display:block}
+ .hero-grid,.about-grid{grid-template-columns:1fr}
+ .hero-visual{height:350px}
+ .product-grid{grid-template-columns:repeat(2,1fr)}
+ .gallery-grid{grid-template-columns:repeat(2,1fr)}
+ .trust-grid{grid-template-columns:repeat(2,1fr)}
+ .review-grid{grid-template-columns:1fr}
+ .footer-grid{grid-template-columns:repeat(2,1fr)}
 }
-
 @media(max-width:520px){
-
-  .hero h1{
-    font-size:42px;
-  }
-
-  .cards{
-    grid-template-columns:1fr;
-  }
-
-  .laptop{
-    width:90%;
-  }
-
-  .screen{
-    min-height:230px;
-    padding:20px;
-  }
-
-  .screen strong{
-    font-size:22px;
-  }
-
-  .book{
-    width:105px;
-    height:145px;
-    font-size:11px;
-  }
-
-  .book3{
-    right:10%;
-  }
-
-  .cta{
-    padding:28px;
-  }
-
-  .cta h2{
-    font-size:29px;
-  }
-
-  .footer{
-    flex-direction:column;
-  }
+ section{padding:53px 0}
+ .brand strong{font-size:18px}.brand small{font-size:9px}
+ .hero{padding-top:35px}
+ .hero h1{letter-spacing:-2px}
+ .hero-visual{height:290px}
+ .product-grid{grid-template-columns:1fr}
+ .card-photo{height:235px}
+ .gallery-item{height:160px}
+ .process-grid{grid-template-columns:1fr}
+ .about-photo{height:280px}
+ .footer-grid{grid-template-columns:1fr 1fr;gap:20px}
 }
 </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-
 <header>
-<div class="container nav">
-
-<a href="#" class="logo">
-👑 Digital Success Hub
-<span>LEARN • CREATE • EARN • GROW</span>
-</a>
-
-<nav class="navlinks">
-<a href="#home">Home</a>
-<a href="#included">What's Included</a>
-<a href="#benefits">Benefits</a>
-<a href="#reviews">Reviews</a>
-<a href="#faq">FAQ</a>
-</nav>
-
-<a href="#buy" class="btn">Get Your Bundle →</a>
-
-</div>
+  <nav class="container">
+    <a class="brand" href="#home" aria-label="Hotpicka home">
+      <span class="logo">♨</span>
+      <span><strong>Hotpicka</strong><small>DIGITAL PRODUCTS</small></span>
+    </a>
+    <div class="navlinks" id="navlinks">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="menu" onclick="document.getElementById('navlinks').classList.toggle('open')" aria-label="Toggle navigation">☰ Menu</button>
+  </nav>
 </header>
 
-
-<!-- HERO -->
-
+<main>
 <section class="hero" id="home">
-
-<div class="container hero-grid">
-
-<div>
-
-<span class="badge">
-DIGITAL BUSINESS MEGA BUNDLE
-</span>
-
-<h1>
-Build Your Online Business With One Complete
-<span class="gold">Digital Toolkit</span>
-</h1>
-
-<p>
-Stop searching for separate resources. Get eBooks, templates,
-AI prompts, business planners, social-media content and
-product-listing resources — all organized in one powerful bundle.
-</p>
-
-<div class="points">
-
-<div class="point">⚡ Save Time & Money</div>
-<div class="point">✓ Ready-to-Use</div>
-<div class="point">👤 Beginner Friendly</div>
-<div class="point">∞ Lifetime Access</div>
-
-</div>
-
-<a href="#buy" class="btn">
-🛒 Get Instant Access Now →
-</a>
+  <div class="container hero-grid">
+    <div>
+      <span class="pill">YOUR DIGITAL SUCCESS STARTS HERE</span>
+      <h1><span>Hotpicka</span><br>Digital Products</h1>
+      <p class="hero-copy">Premium digital resources to help you learn new skills, create smarter content and grow your online business.</p>
+      <div class="benefits">
+        <span>✦ eBooks</span><span>✦ Templates</span>
+        <span>✦ AI Prompts</span><span>✦ Business Planners</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn" href="#products">Explore Products →</a>
+        <a class="btn outline" href="#about">Discover Hotpicka</a>
+      </div>
+      <p class="photo-credit">Learn • Create • Earn • Grow</p>
+    </div>
+    <div class="hero-visual">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=90" alt="Modern digital workspace with laptop and desk" fetchpriority="high">
+      <div class="hero-label">
+        <span class="pill">DIGITAL BUSINESS TOOLKIT</span>
+        <h2>Turn Your Ideas Into <span class="gold">Possibilities.</span></h2>
+        <p>Explore digital tools for your next big idea.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div class="trust">
-🔒 Secure Payment &nbsp; | &nbsp; ⚡ Instant Download
+  <div class="container trust-grid">
+    <div class="trust-item"><div class="icon">⚡</div><strong>Instant Access</strong><small>Digital resources</small></div>
+    <div class="trust-item"><div class="icon">◇</div><strong>Secure Checkout</strong><small>Use trusted payment links</small></div>
+    <div class="trust-item"><div class="icon">✦</div><strong>Useful Resources</strong><small>Created for productivity</small></div>
+    <div class="trust-item"><div class="icon">♡</div><strong>Customer First</strong><small>Here to help</small></div>
+  </div>
 </div>
 
-</div>
-
-
-<div class="mockup">
-
-<div class="laptop">
-
-<div class="screen">
-
-<div class="crown">♛</div>
-
-<h2>Digital Success Hub</h2>
-
-<strong>
-DIGITAL BUSINESS<br>
-MEGA BUNDLE
-</strong>
-
-<p>
-Learn • Create • Earn • Grow
-</p>
-
-</div>
-
-</div>
-
-<div class="book book1">
-STARTER<br>GUIDE
-<small>
-Business • Marketing • Action Plan
-</small>
-</div>
-
-<div class="book book2">
-TEMPLATE<br>PACK
-<small>
-Social Media • Offers • Posts
-</small>
-</div>
-
-<div class="book book3">
-AI PROMPTS<br>100
-<small>
-Content • Sales • Ideas
-</small>
-</div>
-
-</div>
-
-</div>
-
+<section class="products" id="products">
+  <div class="container">
+    <div class="heading">
+      <span class="eyebrow">EXPLORE OUR COLLECTION</span>
+      <h2>Digital Products for <span class="gold">Big Ideas</span></h2>
+      <p>Explore resources to help organize your work, create content and plan your digital journey.</p>
+    </div>
+    <div class="product-grid">
+      <article class="card">
+        <div class="card-photo">
+          <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=900&q=90" alt="Books and learning resources" loading="lazy">
+          <span class="tag">LEARN</span>
+        </div>
+        <div class="card-body">
+          <h3>Digital eBooks</h3>
+          <p>Practical reading resources for learning, business planning and personal growth.</p>
+          <ul><li>Step-by-step guides</li><li>Business ideas</li><li>Learning resources</li></ul>
+          <div class="card-bottom"><small>Digital downloads</small><a class="btn" href="#contact">Explore →</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-photo">
+          <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=90" alt="Creative writing and planning workspace" loading="lazy">
+          <span class="tag">CREATE</span>
+        </div>
+        <div class="card-body">
+          <h3>Creative Templates</h3>
+          <p>Template resources to make your content and everyday tasks more organized.</p>
+          <ul><li>Social post layouts</li><li>Promotional designs</li><li>Editable planning sheets</li></ul>
+          <div class="card-bottom"><small>Creative toolkit</small><a class="btn" href="#contact">Explore →</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-photo">
+          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=90" alt="Artificial intelligence digital technology" loading="lazy">
+          <span class="tag">WORK SMARTER</span>
+        </div>
+        <div class="card-body">
+          <h3>AI Prompt Library</h3>
+          <p>Prompt ideas for brainstorming, drafting content and organizing marketing tasks.</p>
+          <ul><li>Content creation prompts</li><li>Marketing brainstorms</li><li>Business planning ideas</li></ul>
+          <div class="card-bottom"><small>AI productivity</small><a class="btn" href="#contact">Explore →</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-photo">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=90" alt="Business planning and notes on a desk" loading="lazy">
+          <span class="tag">STAY FOCUSED</span>
+        </div>
+        <div class="card-body">
+          <h3>Business Planners</h3>
+          <p>Keep goals, projects and weekly tasks organized with useful planning resources.</p>
+          <ul><li>Weekly task planning</li><li>Goal-setting worksheets</li><li>Business checklists</li></ul>
+          <div class="card-bottom"><small>Plan with purpose</small><a class="btn" href="#contact">Explore →</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-photo">
+          <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=900&q=90" alt="Social media content creation" loading="lazy">
+          <span class="tag">GROW YOUR BRAND</span>
+        </div>
+        <div class="card-body">
+          <h3>Social Media Content</h3>
+          <p>Plan your social presence with post ideas and content organization tools.</p>
+          <ul><li>Content calendars</li><li>Post ideas</li><li>Campaign planning</li></ul>
+          <div class="card-bottom"><small>Content resources</small><a class="btn" href="#contact">Explore →</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-photo">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=90" alt="Laptop showing business analytics and charts" loading="lazy">
+          <span class="tag">GROW</span>
+        </div>
+        <div class="card-body">
+          <h3>Digital Business Toolkit</h3>
+          <p>Bring planning, content ideas and business resources together in one workflow.</p>
+          <ul><li>Business starter resources</li><li>Marketing checklists</li><li>Growth planning</li></ul>
+          <div class="card-bottom"><small>All-in-one approach</small><a class="btn" href="#contact">Explore →</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
 
-
-<!-- WHAT'S INCLUDED -->
-
-<section class="section white" id="included">
-
-<div class="container">
-
-<div class="eyebrow">
-WHAT'S INCLUDED
-</div>
-
-<h2>
-Everything You Need to<br>
-Build, Grow & Earn Online
-</h2>
-
-<p class="intro">
-A practical collection of resources designed to help you
-create, organize and market a digital business without
-hunting for separate tools.
-</p>
-
-
-<div class="products">
-
-
-<div class="product">
-
-<div>
-
-<h3>
-01 — Digital Business Starter Guide
-</h3>
-
-<ul>
-<li>Beginner-friendly business guidance</li>
-<li>Product creation ideas</li>
-<li>Marketing fundamentals</li>
-<li>30-day action plan</li>
-</ul>
-
-</div>
-
-<div class="mini-book">
-STARTER<br>GUIDE
-</div>
-
-</div>
-
-
-<div class="product">
-
-<div>
-
-<h3>
-02 — Canva-Style Template Pack
-</h3>
-
-<ul>
-<li>Social-media designs</li>
-<li>Promotional posts</li>
-<li>Checklists & testimonials</li>
-<li>Offers & educational posts</li>
-</ul>
-
-</div>
-
-<div class="mini-book">
-TEMPLATE<br>PACK
-</div>
-
-</div>
-
-
-<div class="product">
-
-<div>
-
-<h3>
-03 — 100 AI Prompts
-</h3>
-
-<ul>
-<li>Content creation</li>
-<li>Marketing & sales</li>
-<li>Product ideas</li>
-<li>Customer engagement</li>
-</ul>
-
-</div>
-
-<div class="mini-book">
-AI<br>PROMPTS<br>100
-</div>
-
-</div>
-
-
-<div class="product">
-
-<div>
-
-<h3>
-04 — Business Planner
-</h3>
-
-<ul>
-<li>Task planner</li>
-<li>Sales tracker</li>
-<li>Goal setting</li>
-<li>Content & expense tracker</li>
-</ul>
-
-</div>
-
-<div class="mini-book">
-BUSINESS<br>PLANNER
-</div>
-
-</div>
-
-</div>
-
-
-<div class="cards">
-
-<div class="card">
-<div class="icon">📖</div>
-<h3>eBooks & Guides</h3>
-<p>Practical learning resources.</p>
-</div>
-
-<div class="card">
-<div class="icon">▣</div>
-<h3>Templates</h3>
-<p>Ready-to-customize assets.</p>
-</div>
-
-<div class="card">
-<div class="icon">⚙</div>
-<h3>AI Prompts</h3>
-<p>Speed up your content work.</p>
-</div>
-
-<div class="card">
-<div class="icon">📱</div>
-<h3>Social Media Content</h3>
-<p>Ideas for consistent posting.</p>
-</div>
-
-</div>
-
-</div>
-
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="heading">
+      <span class="eyebrow">THE HOTPICKA EXPERIENCE</span>
+      <h2>A World of <span class="gold">Digital Creativity</span></h2>
+      <p>Discover ideas and inspiration for your next project.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=90" alt="Team collaborating on digital work" loading="lazy"><span>Work Smarter</span></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=800&q=90" alt="Laptop and creative workspace" loading="lazy"><span>Create Anywhere</span></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=90" alt="Team planning and collaboration" loading="lazy"><span>Plan Your Goals</span></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=90" alt="People working with technology" loading="lazy"><span>Build Your Ideas</span></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=90" alt="Business discussion at a table" loading="lazy"><span>Business Planning</span></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=800&q=90" alt="Digital work on a laptop" loading="lazy"><span>Digital Learning</span></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=90" alt="Creative technology team" loading="lazy"><span>Creative Thinking</span></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=90" alt="Team working together" loading="lazy"><span>Grow Together</span></div>
+    </div>
+  </div>
 </section>
 
-
-<!-- BENEFITS -->
-
-<section class="section dark" id="benefits">
-
-<div class="container benefits">
-
-<div>
-
-<div class="eyebrow">
-WHY CHOOSE THIS BUNDLE?
-</div>
-
-<h2>
-Your Shortcut to
-<span class="gold">Online Success</span>
-</h2>
-
-<p class="intro">
-Skip the confusion and get your essential digital-business
-resources in one place. Everything is designed to help you
-take action faster.
-</p>
-
-<br>
-
-<a href="#buy" class="btn">
-Start Building Today →
-</a>
-
-</div>
-
-
-<div class="benefit-grid">
-
-<div class="benefit">
-<b>🚀 Step-by-Step Guidance</b>
-<span>Simple resources for beginners.</span>
-</div>
-
-<div class="benefit">
-<b>✎ Editable Templates</b>
-<span>Customize for your own brand.</span>
-</div>
-
-<div class="benefit">
-<b>∞ Lifetime Access</b>
-<span>Keep your toolkit available.</span>
-</div>
-
-<div class="benefit">
-<b>💰 More Value</b>
-<span>One bundle, many resources.</span>
-</div>
-
-</div>
-
-</div>
-
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-photo">
+      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=90" alt="Modern professional workspace" loading="lazy">
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow gold">WHY HOTPICKA?</span>
+      <h2>Your Ideas Deserve <span class="gold">Better Tools.</span></h2>
+      <p>Hotpicka Digital Products brings together digital resource categories designed to support learning, creativity and business organization.</p>
+      <ul class="check-list">
+        <li>Resources for creators and entrepreneurs</li>
+        <li>Ideas for content and marketing workflows</li>
+        <li>Planning tools for everyday productivity</li>
+        <li>Convenient access to digital resources</li>
+        <li>A growing collection of useful products</li>
+      </ul>
+      <a class="btn" href="#products">Explore the Collection →</a>
+    </div>
+  </div>
 </section>
 
-
-<!-- PHOTO / STORY SECTION -->
-
-<section class="photo-section">
-
-<div class="container">
-
-<div class="photo-box">
-
-<div class="eyebrow">
-YOUR DIGITAL BUSINESS STARTS HERE
-</div>
-
-<h2>
-Turn Your Ideas Into a
-<span class="gold">Digital Business.</span>
-</h2>
-
-<p>
-Learn the basics, create useful digital products,
-organize your work and start building your online
-presence with one complete toolkit.
-</p>
-
-<br>
-
-<a href="#buy" class="btn">
-Get Started Now →
-</a>
-
-</div>
-
-</div>
-
+<section class="process">
+  <div class="container">
+    <div class="heading">
+      <span class="eyebrow">SIMPLE AND CONVENIENT</span>
+      <h2>How It <span class="gold">Works</span></h2>
+      <p>Your journey to finding the right digital resource starts here.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-card"><div class="number">01</div><h3>Explore</h3><p>Browse the collection and choose a resource that matches your needs.</p></div>
+      <div class="process-card"><div class="number">02</div><h3>Purchase</h3><p>Follow the product's configured checkout or payment instructions.</p></div>
+      <div class="process-card"><div class="number">03</div><h3>Get Started</h3><p>Follow the delivery instructions provided with your purchased product.</p></div>
+    </div>
+  </div>
 </section>
 
-
-<!-- TESTIMONIALS -->
-
-<section class="section white" id="reviews">
-
-<div class="container">
-
-<div class="eyebrow">
-REAL PEOPLE. REAL FEEDBACK.
-</div>
-
-<h2>
-What Our Customers Say
-</h2>
-
-
-<div class="testimonials">
-
-
-<div class="testimonial">
-
-<div class="stars">
-★★★★★
-</div>
-
-<p>
-“Everything is well organized and super easy to use.
-I finally had a clear starting point for my online business.”
-</p>
-
-<b>— Sarah K.</b>
-
-</div>
-
-
-<div class="testimonial">
-
-<div class="stars">
-★★★★★
-</div>
-
-<p>
-“The templates and AI prompts saved me so much time
-and gave me ideas for consistent social content.”
-</p>
-
-<b>— Ali Raza</b>
-
-</div>
-
-
-<div class="testimonial">
-
-<div class="stars">
-★★★★★
-</div>
-
-<p>
-“Perfect for beginners. The step-by-step resources
-make everything feel much simpler.”
-</p>
-
-<b>— Ayesha Malik</b>
-
-</div>
-
-</div>
-
-</div>
-
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="heading">
+      <span class="eyebrow">CUSTOMER EXPERIENCE</span>
+      <h2>Made for Your <span class="gold">Next Big Idea</span></h2>
+      <p>Explore our digital resource collection and find the right tools for your goals.</p>
+    </div>
+    <div class="review-grid">
+      <article class="review"><div class="stars">★★★★★</div><p>“A well-organized collection of digital resource categories for planning and creativity.”</p><strong>Digital Resource Shopper</strong><small>Example testimonial layout</small></article>
+      <article class="review"><div class="stars">★★★★★</div><p>“Templates and planning resources can help make everyday content work easier to organize.”</p><strong>Creative Entrepreneur</strong><small>Example testimonial layout</small></article>
+      <article class="review"><div class="stars">★★★★★</div><p>“A convenient place to explore ideas for digital learning and business productivity.”</p><strong>Digital Learner</strong><small>Example testimonial layout</small></article>
+    </div>
+    <p class="photo-credit" style="text-align:center;margin-top:18px">Note: These are illustrative testimonials, not verified customer reviews.</p>
+  </div>
 </section>
 
-
-<!-- FAQ -->
-
-<section class="section dark" id="faq">
-
-<div class="container">
-
-<div class="eyebrow">
-FAQ
-</div>
-
-<h2>
-Questions? We've Got You.
-</h2>
-
-
-<div class="faq">
-
-<div class="faq-item">
-
-<h3>
-Is it beginner friendly?
-</h3>
-
-<p>
-Yes. The bundle is organized with simple,
-practical resources for beginners.
-</p>
-
-</div>
-
-
-<div class="faq-item">
-
-<h3>
-Can I edit the templates?
-</h3>
-
-<p>
-Yes. The template resources are designed
-to be customized.
-</p>
-
-</div>
-
-
-<div class="faq-item">
-
-<h3>
-How do I receive it?
-</h3>
-
-<p>
-After purchase, your delivery or download
-process can be connected to your payment system.
-</p>
-
-</div>
-
-
-<div class="faq-item">
-
-<h3>
-Is payment secure?
-</h3>
-
-<p>
-Connect your preferred trusted payment provider
-to the purchase button.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
+<section class="cta" id="contact">
+  <div class="container">
+    <span class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</span>
+    <h2>Ready to Explore <span class="gold">Hotpicka?</span></h2>
+    <p>Find digital resources for learning, creating, planning and building your next project.</p>
+    <a class="btn" href="#products">Explore Products →</a>
+    <p style="font-size:12px;margin-top:18px">Questions? Contact us using your official business email.</p>
+  </div>
 </section>
 
-
-<!-- FINAL CTA -->
-
-<section class="cta-wrap" id="buy">
-
-<div class="container">
-
-<div class="cta">
-
-<div>
-
-<div class="eyebrow">
-DON'T MISS THE OPPORTUNITY
-</div>
-
-<h2>
-Get the Digital Business Mega Bundle
-Today & Start Your Online Journey!
-</h2>
-
-<p style="color:#aaa">
-One bundle. Endless possibilities.
-Your success starts with action.
-</p>
-
-</div>
-
-<a
-class="btn"
-href="https://wa.me/918445291334text=I%20want%20the%20Digital%20Business%20Mega%20Bundle"
-target="_blank">
-
-🛒 Get Instant Access Now →
-
-</a>
-
-</div>
-
-</div>
-
+<section id="faq">
+  <div class="container">
+    <div class="heading">
+      <span class="eyebrow">HELP CENTER</span>
+      <h2>Frequently Asked <span class="gold">Questions</span></h2>
+    </div>
+    <div class="faq-list">
+      <details><summary>What can I find at Hotpicka?</summary><p>Digital resource categories include eBooks, creative templates, AI prompts, planners and social media content resources.</p></details>
+      <details><summary>Are these physical products?</summary><p>This storefront is designed for digital products. Check each individual listing for its exact contents and format.</p></details>
+      <details><summary>How do I buy a product?</summary><p>Choose a product and follow its configured checkout instructions. Product-specific purchase and delivery links must be added before launch.</p></details>
+      <details><summary>How do I get my download?</summary><p>After purchase, follow the delivery instructions supplied with the specific product. A working delivery system must be configured by the store owner.</p></details>
+      <details><summary>How can I contact Hotpicka?</summary><p>Add your real business email address or customer-support link to this website before publishing.</p></details>
+    </div>
+  </div>
 </section>
-
-
-<!-- FOOTER -->
+</main>
 
 <footer>
-
-<div class="container footer">
-
-<div>
-
-<b style="color:white;font-size:17px">
-👑 Digital Success Hub
-</b>
-
-<br>
-
-Learn • Create • Earn • Grow
-
-</div>
-
-
-<div>
-© 2026 Digital Success Hub.
-All rights reserved.
-</div>
-
-</div>
-
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#home"><span class="logo">♨</span><span><strong>Hotpicka</strong><small>DIGITAL PRODUCTS</small></span></a>
+        <p style="margin-top:16px">Learn • Create • Earn • Grow</p>
+        <p>Digital resources for ideas, creativity and productivity.</p>
+      </div>
+      <div><h3>Explore</h3><a href="#products">All Products</a><a href="#gallery">Photo Gallery</a><a href="#about">About Hotpicka</a></div>
+      <div><h3>Customer Help</h3><a href="#faq">FAQs</a><a href="#contact">Contact</a><a href="#contact">Order Support</a></div>
+      <div><h3>Store Information</h3><a href="#contact">Privacy Policy</a><a href="#contact">Terms & Conditions</a><a href="#contact">Refund Policy</a></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Hotpicka Digital Products</span><span>Learn • Create • Earn • Grow</span></div>
+  </div>
 </footer>
 
-
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+document.querySelectorAll(".navlinks a").forEach(function(link){
+  link.addEventListener("click",function(){
+    document.getElementById("navlinks").classList.remove("open");
+  });
+});
+</script>
 </body>
-  </html>
+</html>
