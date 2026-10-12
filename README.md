@@ -1,2 +1,1 @@
-# Hotpicka.store-
-Humare yha diamond jewelry gold and silver 1oo%shud or original me milta h yaha aap apne pasand ke digain bhi bnwa sakte h low and Hai price par bnwa sakte h 
+Hotpicka Digital Products — Premium digital resources, eBooks, templates, AI prompts, and business tools to help people learn, create, and grow online. A modern digital storefront with product browsing and secure Razorpay payment integration.
