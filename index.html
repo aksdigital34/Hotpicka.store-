@@ -1,4 +1,4 @@
-
+HTML
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,418 +6,472 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#080a0f">
-<meta name="description" content="Shop digital business guides, templates, AI prompts, planners and social media resources at Hotpicka Digital Products.">
-<title>Hotpicka Digital Products | Learn • Create • Earn • Grow</title>
+<meta name="description" content="Explore Hotpicka digital products, business guides, creative templates, AI prompts and planners.">
+<title>Hotpicka | Premium Digital Products</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#080a0f;--panel:#111620;--gold:#f6c453;--white:#fff;--muted:#b8bdc8;--line:#ffffff18}
+:root{
+ --bg:#080a0f;--panel:#121722;--gold:#f6c453;
+ --white:#fff;--muted:#b8bdc8;--line:#ffffff20;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--white);line-height:1.65}
-img{width:100%;height:100%;object-fit:cover;display:block}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--white);line-height:1.7}
 a{color:inherit;text-decoration:none}
-button,input{font:inherit}
-.container{width:min(1200px,92%);margin:auto}
-section{padding:75px 0}
+button{font:inherit;cursor:pointer}
+img{display:block;width:100%;object-fit:cover}
+.container{width:min(1160px,92%);margin:auto}
+section{padding:72px 0}
 h1,h2,h3{line-height:1.2}
 .gold{color:var(--gold)}
 .muted{color:var(--muted)}
-.btn{display:inline-block;padding:13px 23px;border-radius:40px;background:linear-gradient(120deg,#ffe6a0,#e8ad27);color:#111;font-weight:800;border:0;transition:.2s}
-.btn:hover{transform:translateY(-3px)}
-.outline{background:transparent;border:1px solid var(--gold);color:var(--gold)}
-.heading{text-align:center;margin-bottom:36px}
-.heading .eyebrow{color:var(--gold);font-size:12px;letter-spacing:3px;font-weight:800}
-.heading h2{font-size:clamp(27px,4vw,42px);margin:10px 0}
-.heading p{color:var(--muted);max-width:650px;margin:auto}
-/* NAVIGATION */
-header{position:sticky;top:0;z-index:20;background:#080a0ff2;backdrop-filter:blur(15px);border-bottom:1px solid #f6c45366}
+.btn{display:inline-block;border:0;border-radius:30px;padding:13px 22px;background:linear-gradient(120deg,#ffe7a6,#eab12e);color:#111;font-weight:800;text-align:center;transition:.2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.btn-outline{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+.eyebrow{color:var(--gold);font-size:11px;font-weight:800;letter-spacing:2.5px}
+.heading{text-align:center;margin:0 auto 38px;max-width:720px}
+.heading h2{font-size:clamp(28px,5vw,43px);margin:12px 0}
+.heading p{color:var(--muted);font-size:14px}
+
+/* Header and navigation */
+header{position:sticky;top:0;z-index:50;background:#080a0ff5;backdrop-filter:blur(12px);border-bottom:1px solid #f6c45355}
 nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:15px}
 .brand{display:flex;align-items:center;gap:10px}
-.logo{font-size:38px;color:var(--gold);line-height:1}
-.brand strong{display:block;font-size:22px;font-weight:900}
-.brand small{display:block;color:var(--gold);font-size:10px;letter-spacing:1.8px}
-.navlinks{display:flex;align-items:center;gap:22px;font-size:13px;font-weight:600}
+.brand-icon{font-size:35px;color:var(--gold);line-height:1}
+.brand strong{display:block;font-size:23px;font-weight:900}
+.brand small{display:block;font-size:9px;color:var(--gold);letter-spacing:2px}
+.navlinks{display:flex;align-items:center;gap:20px;font-size:12px;font-weight:700}
 .navlinks a:hover{color:var(--gold)}
-.menu{display:none;background:transparent;color:white;border:1px solid var(--line);padding:8px 12px;border-radius:9px}
-/* HERO */
-.hero{padding:45px 0 65px;background:radial-gradient(ellipse at 85% 25%,#80561e45,transparent 48%),#090b10}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center}
-.hero h1{font-size:clamp(42px,6vw,76px);letter-spacing:-3px;margin:15px 0}
-.hero h1 span{color:var(--gold)}
-.hero-copy{color:#d0d2d9;font-size:17px;margin-bottom:22px}
-.pill{display:inline-block;border:1px solid #f6c45388;color:var(--gold);border-radius:30px;padding:5px 12px;font-size:11px;font-weight:800;letter-spacing:1px}
-.benefits{display:flex;flex-wrap:wrap;gap:10px 18px;margin:23px 0;font-size:12px}
-.benefits span:first-letter{color:var(--gold)}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.hero-visual{height:480px;position:relative;border:1px solid #f6c45377;border-radius:23px;overflow:hidden}
-.hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#050609dd,transparent 68%)}
-.hero-visual img{object-position:center}
-.hero-label{position:absolute;z-index:2;bottom:24px;left:24px;right:24px}
-.hero-label h2{font-size:28px}
-.hero-label p{color:#eee;font-size:13px}
-.photo-credit{font-size:10px;color:#bbb;margin-top:8px}
-/* TRUST */
-.trust{background:#10131a;border-block:1px solid var(--line)}
-.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;padding:24px 0}
-.trust-item{text-align:center}
-.trust-item .icon{font-size:28px;color:var(--gold)}
-.trust-item strong{display:block;font-size:14px}
-.trust-item small{color:var(--muted);font-size:11px}
-/* PRODUCTS */
+.menu{display:none;background:transparent;color:white;border:1px solid var(--line);border-radius:9px;padding:8px 12px}
+.nav-buy{padding:10px 16px;font-size:12px}
+
+/* Hero */
+.hero{padding:62px 0;background:radial-gradient(ellipse at 85% 30%,#77531d55,transparent 50%),var(--bg)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:40px}
+.hero h1{font-size:clamp(43px,6vw,72px);letter-spacing:-3px;margin:18px 0}
+.hero-copy{font-size:16px;color:#d0d3dc;max-width:550px}
+.hero-points{display:flex;flex-wrap:wrap;gap:10px 17px;margin:22px 0;color:#e5e5e5;font-size:12px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+.hero-image{height:440px;position:relative;border:1px solid #f6c45388;border-radius:23px;overflow:hidden}
+.hero-image img{height:100%}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,#050609ed,transparent 75%)}
+.hero-label{position:absolute;bottom:22px;left:22px;right:22px}
+.hero-label h2{font-size:27px;margin:10px 0}
+.pill{display:inline-block;border:1px solid #f6c45388;color:var(--gold);border-radius:30px;padding:5px 11px;font-size:10px;font-weight:800;letter-spacing:1px}
+
+/* Benefits */
+.benefits{background:#10141c;border-block:1px solid var(--line)}
+.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:23px 0}
+.benefit{text-align:center}
+.benefit .symbol{font-size:27px;color:var(--gold)}
+.benefit strong{display:block;font-size:13px}
+.benefit small{color:var(--muted);font-size:11px}
+
+/* Products */
 .products{background:#0b0d13}
 .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{border:1px solid var(--line);background:linear-gradient(145deg,#171c27,#0c0f15);border-radius:17px;overflow:hidden;transition:.25s}
-.card:hover{transform:translateY(-5px);border-color:#f6c45399}
-.card-photo{height:230px;position:relative;overflow:hidden;background:#191d27}
-.card-photo img{transition:transform .4s}
-.card:hover .card-photo img{transform:scale(1.05)}
-.tag{position:absolute;top:12px;left:12px;background:var(--gold);color:#111;font-size:10px;font-weight:900;border-radius:20px;padding:5px 10px}
-.card-body{padding:20px}
-.card-body h3{font-size:19px;margin-bottom:9px}
-.card-body p{color:var(--muted);font-size:13px;min-height:58px}
-.card-body ul{list-style:none;font-size:12px;margin-top:13px;color:#e2e2e2}
-.card-body li{margin:5px 0}
-.card-body li:before{content:"✓ ";color:var(--gold);font-weight:900}
-.card-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:17px}
-.card-bottom a{font-size:12px;padding:9px 14px}
-.card-bottom small{color:var(--gold);font-weight:700}
-/* PHOTO GALLERY */
-.gallery{background:#0e1118}
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.gallery-item{height:220px;border-radius:15px;overflow:hidden;position:relative;border:1px solid var(--line)}
-.gallery-item img{transition:.4s}
-.gallery-item:hover img{transform:scale(1.07)}
-.gallery-item span{position:absolute;bottom:0;left:0;right:0;padding:30px 13px 12px;background:linear-gradient(transparent,#000e);font-weight:800;font-size:14px}
-/* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center}
-.about-photo{height:390px;border-radius:20px;overflow:hidden;border:1px solid #f6c45366}
-.about-copy h2{font-size:clamp(30px,4vw,44px);margin:12px 0}
-.about-copy p{color:var(--muted);margin:15px 0}
-.check-list{list-style:none;margin:22px 0}
-.check-list li{padding:7px 0;font-size:13px}
-.check-list li:before{content:"✓";color:var(--gold);font-weight:900;margin-right:12px}
-/* PROCESS */
+.product{background:linear-gradient(145deg,#171d28,#0c0f15);border:1px solid var(--line);border-radius:17px;overflow:hidden;transition:.25s}
+.product:hover{transform:translateY(-5px);border-color:#f6c45399}
+.product-image{height:210px;position:relative;background:#171c25}
+.product-image img{height:100%;transition:.3s}
+.product:hover .product-image img{transform:scale(1.04)}
+.product-tag{position:absolute;top:13px;left:13px;background:var(--gold);color:#111;padding:5px 10px;border-radius:20px;font-size:10px;font-weight:900}
+.product-content{padding:20px}
+.product-content h3{font-size:19px;margin-bottom:10px}
+.product-content p{font-size:13px;color:var(--muted);min-height:65px}
+.product-content ul{list-style:none;margin:14px 0;color:#e0e2e7;font-size:12px}
+.product-content li{margin:5px 0}
+.product-content li:before{content:"✓ ";color:var(--gold);font-weight:900}
+.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:17px}
+.product-bottom small{color:var(--gold);font-size:11px}
+.product-bottom .btn{padding:10px 14px;font-size:12px}
+.payment-note{text-align:center;color:var(--muted);font-size:12px;margin-top:25px}
+
+/* Gallery */
+.gallery{background:#10141c}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gallery-item{height:205px;position:relative;overflow:hidden;border-radius:14px;border:1px solid var(--line)}
+.gallery-item img{height:100%;transition:.3s}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-item span{position:absolute;bottom:0;left:0;right:0;padding:28px 12px 12px;background:linear-gradient(transparent,#000e);font-weight:800;font-size:13px}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px}
+.about-image{height:370px;border-radius:20px;overflow:hidden;border:1px solid #f6c45366}
+.about-image img{height:100%}
+.about-copy h2{font-size:clamp(30px,4vw,43px);margin:12px 0}
+.about-copy p{color:var(--muted);font-size:14px;margin:14px 0}
+.check-list{list-style:none;margin:20px 0}
+.check-list li{padding:6px 0;font-size:13px}
+.check-list li:before{content:"✓";color:var(--gold);margin-right:12px;font-weight:900}
+
+/* How it works */
 .process{background:#11151e}
 .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.process-card{text-align:center;padding:26px 20px;border:1px solid var(--line);border-radius:16px}
-.process-card .number{font-size:29px;color:var(--gold);font-weight:900}
+.process-card{text-align:center;border:1px solid var(--line);border-radius:16px;padding:27px 20px}
+.process-number{color:var(--gold);font-size:30px;font-weight:900}
 .process-card h3{margin:10px 0}
 .process-card p{font-size:13px;color:var(--muted)}
-/* TESTIMONIALS */
-.reviews{background:#0b0d13}
-.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.review{padding:24px;border:1px solid var(--line);border-radius:17px;background:#121620}
-.stars{color:var(--gold);letter-spacing:3px}
-.review p{color:#e0e2e8;font-size:13px;margin:14px 0}
-.review strong{font-size:13px}
-.review small{display:block;color:var(--muted);font-size:11px}
-/* CTA */
-.cta{padding:60px 0;background:linear-gradient(120deg,#30220c,#11141b 65%);border-block:1px solid #f6c45366;text-align:center}
-.cta h2{font-size:clamp(28px,4vw,43px);margin:12px 0}
-.cta p{color:#d1d1d1;margin:0 auto 23px;max-width:650px}
+
+/* Call to action */
+.cta{background:linear-gradient(120deg,#33240b,#10131a 70%);border-block:1px solid #f6c45355;text-align:center}
+.cta h2{font-size:clamp(29px,5vw,44px);margin:13px 0}
+.cta p{color:#d1d3d9;max-width:650px;margin:0 auto 22px;font-size:14px}
+
 /* FAQ */
 .faq-list{max-width:800px;margin:auto}
 details{padding:18px 5px;border-bottom:1px solid var(--line)}
-summary{font-weight:700;cursor:pointer}
+summary{cursor:pointer;font-size:14px;font-weight:700}
 details p{color:var(--muted);font-size:13px;padding-top:12px}
-/* FOOTER */
-footer{padding:45px 0 20px;background:#06070b}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px}
-footer h3{font-size:14px;margin-bottom:13px;color:var(--gold)}
-footer p,footer a{font-size:12px;color:var(--muted)}
+
+/* Policies */
+.policy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.policy{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.policy h3{color:var(--gold);font-size:15px;margin-bottom:10px}
+.policy p{color:var(--muted);font-size:12px}
+
+/* Footer */
+footer{background:#06070b;padding:42px 0 20px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:28px}
+footer h3{color:var(--gold);font-size:14px;margin-bottom:12px}
+footer p,footer a{color:var(--muted);font-size:12px}
 footer a{display:block;margin:8px 0}
 footer a:hover{color:var(--gold)}
-.footer-bottom{border-top:1px solid var(--line);margin-top:32px;padding-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:11px}
+.footer-bottom{border-top:1px solid var(--line);margin-top:30px;padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:11px}
+
 @media(max-width:850px){
- .navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:#0b0d13;padding:22px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:18px}
- .navlinks.open{display:flex}.menu{display:block}
+ .menu{display:block}
+ .navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:#0b0d13;padding:22px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:17px}
+ .navlinks.open{display:flex}
+ .navlinks a{padding:5px 0}
  .hero-grid,.about-grid{grid-template-columns:1fr}
- .hero-visual{height:350px}
- .product-grid{grid-template-columns:repeat(2,1fr)}
+ .hero-image{height:360px}
+ .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
  .gallery-grid{grid-template-columns:repeat(2,1fr)}
- .trust-grid{grid-template-columns:repeat(2,1fr)}
- .review-grid{grid-template-columns:1fr}
+ .benefit-grid{grid-template-columns:repeat(2,1fr)}
  .footer-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:520px){
  section{padding:53px 0}
- .brand strong{font-size:18px}.brand small{font-size:9px}
- .hero{padding-top:35px}
+ .hero{padding:42px 0}
  .hero h1{letter-spacing:-2px}
- .hero-visual{height:290px}
+ .hero-image{height:290px}
  .product-grid{grid-template-columns:1fr}
- .card-photo{height:235px}
- .gallery-item{height:160px}
- .process-grid{grid-template-columns:1fr}
- .about-photo{height:280px}
+ .product-image{height:230px}
+ .gallery-item{height:155px}
+ .process-grid,.policy-grid{grid-template-columns:1fr}
+ .about-image{height:270px}
  .footer-grid{grid-template-columns:1fr 1fr;gap:20px}
+ .brand strong{font-size:19px}
+ .brand small{font-size:8px}
+ .nav-buy{display:none}
 }
 </style>
 </head>
 <body>
 
 <header>
-  <nav class="container">
-    <a class="brand" href="#home" aria-label="Hotpicka home">
-      <span class="logo">♨</span>
-      <span><strong>Hotpicka</strong><small>DIGITAL PRODUCTS</small></span>
-    </a>
-    <div class="navlinks" id="navlinks">
-      <a href="#home">Home</a>
-      <a href="#products">Products</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#about">About</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <button class="menu" onclick="document.getElementById('navlinks').classList.toggle('open')" aria-label="Toggle navigation">☰ Menu</button>
-  </nav>
+<nav class="container">
+ <a class="brand" href="#home" aria-label="Hotpicka home">
+  <span class="brand-icon">♨</span>
+  <span><strong>Hotpicka</strong><small>DIGITAL PRODUCTS</small></span>
+ </a>
+ <div class="navlinks" id="navlinks">
+  <a href="#home">Home</a>
+  <a href="#products">Products</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#about">About</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+ </div>
+ <a class="btn nav-buy" href="https://rzp.io/rzp/J9ASP62" target="_blank" rel="noopener noreferrer">Checkout ↗</a>
+ <button class="menu" id="menuButton" type="button" aria-expanded="false" aria-controls="navlinks">☰ Menu</button>
+</nav>
 </header>
 
 <main>
 <section class="hero" id="home">
-  <div class="container hero-grid">
-    <div>
-      <span class="pill">YOUR DIGITAL SUCCESS STARTS HERE</span>
-      <h1><span>Hotpicka</span><br>Digital Products</h1>
-      <p class="hero-copy">Premium digital resources to help you learn new skills, create smarter content and grow your online business.</p>
-      <div class="benefits">
-        <span>✦ eBooks</span><span>✦ Templates</span>
-        <span>✦ AI Prompts</span><span>✦ Business Planners</span>
-      </div>
-      <div class="hero-actions">
-        <a class="btn" href="#products">Explore Products →</a>
-        <a class="btn outline" href="#about">Discover Hotpicka</a>
-      </div>
-      <p class="photo-credit">Learn • Create • Earn • Grow</p>
-    </div>
-    <div class="hero-visual">
-      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=90" alt="Modern digital workspace with laptop and desk" fetchpriority="high">
-      <div class="hero-label">
-        <span class="pill">DIGITAL BUSINESS TOOLKIT</span>
-        <h2>Turn Your Ideas Into <span class="gold">Possibilities.</span></h2>
-        <p>Explore digital tools for your next big idea.</p>
-      </div>
-    </div>
+ <div class="container hero-grid">
+  <div>
+   <span class="pill">YOUR DIGITAL SUCCESS STARTS HERE</span>
+   <h1><span class="gold">Hotpicka</span><br>Digital Products</h1>
+   <p class="hero-copy">Discover digital resources to help you learn new skills, create smarter content, organize your ideas and plan your online business.</p>
+   <div class="hero-points">
+    <span>✦ eBooks</span><span>✦ Templates</span>
+    <span>✦ AI Prompts</span><span>✦ Planners</span>
+   </div>
+   <div class="hero-actions">
+    <a class="btn" href="#products">Explore Products ↓</a>
+    <a class="btn btn-outline" href="#about">Discover Hotpicka</a>
+   </div>
+   <p class="muted" style="font-size:12px;margin-top:18px">Learn • Create • Earn • Grow</p>
   </div>
+  <div class="hero-image">
+   <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85" alt="Laptop and modern digital workspace">
+   <div class="hero-overlay"></div>
+   <div class="hero-label">
+    <span class="pill">YOUR CREATIVE TOOLKIT</span>
+    <h2>Turn Ideas Into <span class="gold">Possibilities.</span></h2>
+    <p>Explore tools for your next big idea.</p>
+   </div>
+  </div>
+ </div>
 </section>
 
-<div class="trust">
-  <div class="container trust-grid">
-    <div class="trust-item"><div class="icon">⚡</div><strong>Instant Access</strong><small>Digital resources</small></div>
-    <div class="trust-item"><div class="icon">◇</div><strong>Secure Checkout</strong><small>Use trusted payment links</small></div>
-    <div class="trust-item"><div class="icon">✦</div><strong>Useful Resources</strong><small>Created for productivity</small></div>
-    <div class="trust-item"><div class="icon">♡</div><strong>Customer First</strong><small>Here to help</small></div>
-  </div>
+<div class="benefits">
+ <div class="container benefit-grid">
+  <div class="benefit"><div class="symbol">⚡</div><strong>Digital Resources</strong><small>Explore useful tools</small></div>
+  <div class="benefit"><div class="symbol">◇</div><strong>Online Checkout</strong><small>Razorpay payment link</small></div>
+  <div class="benefit"><div class="symbol">✦</div><strong>Creative Ideas</strong><small>Plan and create</small></div>
+  <div class="benefit"><div class="symbol">♡</div><strong>Customer Support</strong><small>Help when you need it</small></div>
+ </div>
 </div>
 
 <section class="products" id="products">
-  <div class="container">
-    <div class="heading">
-      <span class="eyebrow">EXPLORE OUR COLLECTION</span>
-      <h2>Digital Products for <span class="gold">Big Ideas</span></h2>
-      <p>Explore resources to help organize your work, create content and plan your digital journey.</p>
-    </div>
-    <div class="product-grid">
-      <article class="card">
-        <div class="card-photo">
-          <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=900&q=90" alt="Books and learning resources" loading="lazy">
-          <span class="tag">LEARN</span>
-        </div>
-        <div class="card-body">
-          <h3>Digital eBooks</h3>
-          <p>Practical reading resources for learning, business planning and personal growth.</p>
-          <ul><li>Step-by-step guides</li><li>Business ideas</li><li>Learning resources</li></ul>
-          <div class="card-bottom"><small>Digital downloads</small><a class="btn" href="#contact">Explore →</a></div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card-photo">
-          <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=90" alt="Creative writing and planning workspace" loading="lazy">
-          <span class="tag">CREATE</span>
-        </div>
-        <div class="card-body">
-          <h3>Creative Templates</h3>
-          <p>Template resources to make your content and everyday tasks more organized.</p>
-          <ul><li>Social post layouts</li><li>Promotional designs</li><li>Editable planning sheets</li></ul>
-          <div class="card-bottom"><small>Creative toolkit</small><a class="btn" href="#contact">Explore →</a></div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card-photo">
-          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=90" alt="Artificial intelligence digital technology" loading="lazy">
-          <span class="tag">WORK SMARTER</span>
-        </div>
-        <div class="card-body">
-          <h3>AI Prompt Library</h3>
-          <p>Prompt ideas for brainstorming, drafting content and organizing marketing tasks.</p>
-          <ul><li>Content creation prompts</li><li>Marketing brainstorms</li><li>Business planning ideas</li></ul>
-          <div class="card-bottom"><small>AI productivity</small><a class="btn" href="#contact">Explore →</a></div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card-photo">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=90" alt="Business planning and notes on a desk" loading="lazy">
-          <span class="tag">STAY FOCUSED</span>
-        </div>
-        <div class="card-body">
-          <h3>Business Planners</h3>
-          <p>Keep goals, projects and weekly tasks organized with useful planning resources.</p>
-          <ul><li>Weekly task planning</li><li>Goal-setting worksheets</li><li>Business checklists</li></ul>
-          <div class="card-bottom"><small>Plan with purpose</small><a class="btn" href="#contact">Explore →</a></div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card-photo">
-          <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=900&q=90" alt="Social media content creation" loading="lazy">
-          <span class="tag">GROW YOUR BRAND</span>
-        </div>
-        <div class="card-body">
-          <h3>Social Media Content</h3>
-          <p>Plan your social presence with post ideas and content organization tools.</p>
-          <ul><li>Content calendars</li><li>Post ideas</li><li>Campaign planning</li></ul>
-          <div class="card-bottom"><small>Content resources</small><a class="btn" href="#contact">Explore →</a></div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card-photo">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=90" alt="Laptop showing business analytics and charts" loading="lazy">
-          <span class="tag">GROW</span>
-        </div>
-        <div class="card-body">
-          <h3>Digital Business Toolkit</h3>
-          <p>Bring planning, content ideas and business resources together in one workflow.</p>
-          <ul><li>Business starter resources</li><li>Marketing checklists</li><li>Growth planning</li></ul>
-          <div class="card-bottom"><small>All-in-one approach</small><a class="btn" href="#contact">Explore →</a></div>
-        </div>
-      </article>
-    </div>
+ <div class="container">
+  <div class="heading">
+   <span class="eyebrow">EXPLORE THE COLLECTION</span>
+   <h2>Digital Products for <span class="gold">Big Ideas</span></h2>
+   <p>Choose a resource category, then use its Buy Now button to continue to the configured checkout.</p>
   </div>
+  <div class="product-grid">
+
+   <article class="product">
+    <div class="product-image">
+     <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=85" alt="Books and learning resources" loading="lazy">
+     <span class="product-tag">LEARN</span>
+    </div>
+    <div class="product-content">
+     <h3>Digital eBooks</h3>
+     <p>Reading resources for learning, business ideas and personal development.</p>
+     <ul><li>Step-by-step guides</li><li>Business learning ideas</li><li>Digital reading resources</li></ul>
+     <div class="product-bottom"><small>Digital resource</small><a class="btn" href="https://rzp.io/rzp/J9ASP62" target="_blank" rel="noopener noreferrer">Buy Now ↗</a></div>
+    </div>
+   </article>
+
+   <article class="product">
+    <div class="product-image">
+     <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=85" alt="Writing and creative planning" loading="lazy">
+     <span class="product-tag">CREATE</span>
+    </div>
+    <div class="product-content">
+     <h3>Creative Templates</h3>
+     <p>Organize your content and make everyday creative work easier to plan.</p>
+     <ul><li>Social post layouts</li><li>Promotional design ideas</li><li>Planning sheets</li></ul>
+     <div class="product-bottom"><small>Creative toolkit</small><a class="btn" href="https://rzp.io/rzp/J9ASP62" target="_blank" rel="noopener noreferrer">Buy Now ↗</a></div>
+    </div>
+   </article>
+
+   <article class="product">
+    <div class="product-image">
+     <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=85" alt="Artificial intelligence technology" loading="lazy">
+     <span class="product-tag">WORK SMARTER</span>
+    </div>
+    <div class="product-content">
+     <h3>AI Prompt Library</h3>
+     <p>Prompt ideas for brainstorming, content drafting and marketing plans.</p>
+     <ul><li>Content creation prompts</li><li>Marketing ideas</li><li>Business planning prompts</li></ul>
+     <div class="product-bottom"><small>AI productivity</small><a class="btn" href="https://rzp.io/rzp/J9ASP62" target="_blank" rel="noopener noreferrer">Buy Now ↗</a></div>
+    </div>
+   </article>
+
+   <article class="product">
+    <div class="product-image">
+     <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=85" alt="Business planning workspace" loading="lazy">
+     <span class="product-tag">STAY FOCUSED</span>
+    </div>
+    <div class="product-content">
+     <h3>Business Planners</h3>
+     <p>Bring your goals, weekly tasks and project plans together.</p>
+     <ul><li>Task planning ideas</li><li>Goal-setting worksheets</li><li>Business checklists</li></ul>
+     <div class="product-bottom"><small>Plan with purpose</small><a class="btn" href="https://rzp.io/rzp/J9ASP62" target="_blank" rel="noopener noreferrer">Buy Now ↗</a></div>
+    </div>
+   </article>
+
+   <article class="product">
+    <div class="product-image">
+     <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=800&q=85" alt="Social media and content creation" loading="lazy">
+     <span class="product-tag">GROW YOUR BRAND</span>
+    </div>
+    <div class="product-content">
+     <h3>Social Media Resources</h3>
+     <p>Plan social content and organize ideas for your online presence.</p>
+     <ul><li>Content calendars</li><li>Post ideas</li><li>Campaign planning</li></ul>
+     <div class="product-bottom"><small>Content resources</small><a class="btn" href="https://rzp.io/rzp/J9ASP62" target="_blank" rel="noopener noreferrer">Buy Now ↗</a></div>
+    </div>
+   </article>
+
+   <article class="product">
+    <div class="product-image">
+     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=85" alt="Digital business analytics on a laptop" loading="lazy">
+     <span class="product-tag">BUILD & GROW</span>
+    </div>
+    <div class="product-content">
+     <h3>Digital Business Toolkit</h3>
+     <p>Explore resources for planning, content organization and business workflows.</p>
+     <ul><li>Starter resources</li><li>Marketing checklists</li><li>Growth planning ideas</li></ul>
+     <div class="product-bottom"><small>Business resources</small><a class="btn" href="https://rzp.io/rzp/J9ASP62" target="_blank" rel="noopener noreferrer">Buy Now ↗</a></div>
+    </div>
+   </article>
+
+  </div>
+  <p class="payment-note">Checkout opens through Razorpay. Confirm the displayed price, product details and payment terms before paying.</p>
+ </div>
 </section>
 
 <section class="gallery" id="gallery">
-  <div class="container">
-    <div class="heading">
-      <span class="eyebrow">THE HOTPICKA EXPERIENCE</span>
-      <h2>A World of <span class="gold">Digital Creativity</span></h2>
-      <p>Discover ideas and inspiration for your next project.</p>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=90" alt="Team collaborating on digital work" loading="lazy"><span>Work Smarter</span></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=800&q=90" alt="Laptop and creative workspace" loading="lazy"><span>Create Anywhere</span></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=90" alt="Team planning and collaboration" loading="lazy"><span>Plan Your Goals</span></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=90" alt="People working with technology" loading="lazy"><span>Build Your Ideas</span></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=90" alt="Business discussion at a table" loading="lazy"><span>Business Planning</span></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=800&q=90" alt="Digital work on a laptop" loading="lazy"><span>Digital Learning</span></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=90" alt="Creative technology team" loading="lazy"><span>Creative Thinking</span></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=90" alt="Team working together" loading="lazy"><span>Grow Together</span></div>
-    </div>
+ <div class="container">
+  <div class="heading">
+   <span class="eyebrow">THE HOTPICKA EXPERIENCE</span>
+   <h2>A World of <span class="gold">Digital Creativity</span></h2>
+   <p>Ideas and inspiration for your next project.</p>
   </div>
+  <div class="gallery-grid">
+   <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="Digital collaboration" loading="lazy"><span>Work Smarter</span></div>
+   <div class="gallery-item"><img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=600&q=80" alt="Creative workspace" loading="lazy"><span>Create Anywhere</span></div>
+   <div class="gallery-item"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&q=80" alt="Team planning" loading="lazy"><span>Plan Your Goals</span></div>
+   <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="People working with technology" loading="lazy"><span>Build Your Ideas</span></div>
+  </div>
+ </div>
 </section>
 
 <section id="about">
-  <div class="container about-grid">
-    <div class="about-photo">
-      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=90" alt="Modern professional workspace" loading="lazy">
-    </div>
-    <div class="about-copy">
-      <span class="eyebrow gold">WHY HOTPICKA?</span>
-      <h2>Your Ideas Deserve <span class="gold">Better Tools.</span></h2>
-      <p>Hotpicka Digital Products brings together digital resource categories designed to support learning, creativity and business organization.</p>
-      <ul class="check-list">
-        <li>Resources for creators and entrepreneurs</li>
-        <li>Ideas for content and marketing workflows</li>
-        <li>Planning tools for everyday productivity</li>
-        <li>Convenient access to digital resources</li>
-        <li>A growing collection of useful products</li>
-      </ul>
-      <a class="btn" href="#products">Explore the Collection →</a>
-    </div>
+ <div class="container about-grid">
+  <div class="about-image">
+   <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85" alt="Modern professional workspace" loading="lazy">
   </div>
+  <div class="about-copy">
+   <span class="eyebrow">WHY HOTPICKA?</span>
+   <h2>Your Ideas Deserve <span class="gold">Better Tools.</span></h2>
+   <p>Hotpicka Digital Products brings together resource categories to support learning, creativity and business organization.</p>
+   <ul class="check-list">
+    <li>Resources for creators and entrepreneurs</li>
+    <li>Content and marketing planning ideas</li>
+    <li>Tools for everyday productivity</li>
+    <li>Convenient online checkout</li>
+    <li>A collection for your digital journey</li>
+   </ul>
+   <a class="btn" href="#products">Explore Products →</a>
+  </div>
+ </div>
 </section>
 
 <section class="process">
-  <div class="container">
-    <div class="heading">
-      <span class="eyebrow">SIMPLE AND CONVENIENT</span>
-      <h2>How It <span class="gold">Works</span></h2>
-      <p>Your journey to finding the right digital resource starts here.</p>
-    </div>
-    <div class="process-grid">
-      <div class="process-card"><div class="number">01</div><h3>Explore</h3><p>Browse the collection and choose a resource that matches your needs.</p></div>
-      <div class="process-card"><div class="number">02</div><h3>Purchase</h3><p>Follow the product's configured checkout or payment instructions.</p></div>
-      <div class="process-card"><div class="number">03</div><h3>Get Started</h3><p>Follow the delivery instructions provided with your purchased product.</p></div>
-    </div>
+ <div class="container">
+  <div class="heading">
+   <span class="eyebrow">SIMPLE AND CONVENIENT</span>
+   <h2>How It <span class="gold">Works</span></h2>
+   <p>Three simple steps to explore a digital resource.</p>
   </div>
-</section>
-
-<section class="reviews" id="reviews">
-  <div class="container">
-    <div class="heading">
-      <span class="eyebrow">CUSTOMER EXPERIENCE</span>
-      <h2>Made for Your <span class="gold">Next Big Idea</span></h2>
-      <p>Explore our digital resource collection and find the right tools for your goals.</p>
-    </div>
-    <div class="review-grid">
-      <article class="review"><div class="stars">★★★★★</div><p>“A well-organized collection of digital resource categories for planning and creativity.”</p><strong>Digital Resource Shopper</strong><small>Example testimonial layout</small></article>
-      <article class="review"><div class="stars">★★★★★</div><p>“Templates and planning resources can help make everyday content work easier to organize.”</p><strong>Creative Entrepreneur</strong><small>Example testimonial layout</small></article>
-      <article class="review"><div class="stars">★★★★★</div><p>“A convenient place to explore ideas for digital learning and business productivity.”</p><strong>Digital Learner</strong><small>Example testimonial layout</small></article>
-    </div>
-    <p class="photo-credit" style="text-align:center;margin-top:18px">Note: These are illustrative testimonials, not verified customer reviews.</p>
+  <div class="process-grid">
+   <div class="process-card"><div class="process-number">01</div><h3>Explore</h3><p>Browse the collection and select the resource you want.</p></div>
+   <div class="process-card"><div class="process-number">02</div><h3>Checkout</h3><p>Open the configured Razorpay payment link and check the amount and details.</p></div>
+   <div class="process-card"><div class="process-number">03</div><h3>Get Your Product</h3><p>Follow the delivery instructions supplied by the store owner after purchase.</p></div>
   </div>
+ </div>
 </section>
 
 <section class="cta" id="contact">
-  <div class="container">
-    <span class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</span>
-    <h2>Ready to Explore <span class="gold">Hotpicka?</span></h2>
-    <p>Find digital resources for learning, creating, planning and building your next project.</p>
-    <a class="btn" href="#products">Explore Products →</a>
-    <p style="font-size:12px;margin-top:18px">Questions? Contact us using your official business email.</p>
-  </div>
+ <div class="container">
+  <span class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</span>
+  <h2>Ready to Explore <span class="gold">Hotpicka?</span></h2>
+  <p>Find resources for learning, creating, planning and growing your digital ideas.</p>
+  <a class="btn" href="#products">Shop Digital Products →</a>
+  <p style="font-size:12px;margin-top:18px">Customer support: Add your official business email before publishing.</p>
+ </div>
 </section>
 
 <section id="faq">
-  <div class="container">
-    <div class="heading">
-      <span class="eyebrow">HELP CENTER</span>
-      <h2>Frequently Asked <span class="gold">Questions</span></h2>
-    </div>
-    <div class="faq-list">
-      <details><summary>What can I find at Hotpicka?</summary><p>Digital resource categories include eBooks, creative templates, AI prompts, planners and social media content resources.</p></details>
-      <details><summary>Are these physical products?</summary><p>This storefront is designed for digital products. Check each individual listing for its exact contents and format.</p></details>
-      <details><summary>How do I buy a product?</summary><p>Choose a product and follow its configured checkout instructions. Product-specific purchase and delivery links must be added before launch.</p></details>
-      <details><summary>How do I get my download?</summary><p>After purchase, follow the delivery instructions supplied with the specific product. A working delivery system must be configured by the store owner.</p></details>
-      <details><summary>How can I contact Hotpicka?</summary><p>Add your real business email address or customer-support link to this website before publishing.</p></details>
-    </div>
+ <div class="container">
+  <div class="heading">
+   <span class="eyebrow">HELP CENTER</span>
+   <h2>Frequently Asked <span class="gold">Questions</span></h2>
   </div>
+  <div class="faq-list">
+   <details><summary>What can I find at Hotpicka?</summary><p>Explore digital resource categories such as eBooks, templates, AI prompts, planners and social media resources. Check the specific product listing for the actual contents.</p></details>
+   <details><summary>How do I make a payment?</summary><p>Click Buy Now to open the configured Razorpay link. Verify the amount, seller details and product information before paying.</p></details>
+   <details><summary>Is the same payment link used for every product?</summary><p>Yes. This version uses the same Razorpay link for every Buy Now button. The amount and payment terms are determined by that link's configuration.</p></details>
+   <details><summary>How will I receive my digital product?</summary><p>Follow the delivery instructions provided by the store owner. Automatic delivery is not enabled by this HTML code alone.</p></details>
+   <details><summary>How can I contact customer support?</summary><p>Please use the official contact details published by the store owner. The business email needs to be added before the website goes live.</p></details>
+   <details><summary>What about refunds?</summary><p>Review the seller's published refund terms and applicable consumer rights before purchase. The store owner must publish a real refund policy.</p></details>
+  </div>
+ </div>
+</section>
+
+<section id="policies">
+ <div class="container">
+  <div class="heading">
+   <span class="eyebrow">STORE INFORMATION</span>
+   <h2>Our <span class="gold">Policies</span></h2>
+   <p>Store owner: complete and publish policies that accurately reflect your business before accepting orders.</p>
+  </div>
+  <div class="policy-grid">
+   <article class="policy">
+    <h3>Privacy Policy</h3>
+    <p>Explain what customer information is collected, why it is used, how it is protected and how customers can contact you about privacy. Publish the actual policy before launch.</p>
+   </article>
+   <article class="policy">
+    <h3>Terms & Conditions</h3>
+    <p>Describe product contents, permitted use, payment terms, digital delivery, customer responsibilities and applicable legal terms.</p>
+   </article>
+   <article class="policy">
+    <h3>Refund Policy</h3>
+    <p>State your actual cancellation, refund and support process for digital products, consistent with applicable law and payment-provider requirements.</p>
+   </article>
+  </div>
+ </div>
 </section>
 </main>
 
 <footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <a class="brand" href="#home"><span class="logo">♨</span><span><strong>Hotpicka</strong><small>DIGITAL PRODUCTS</small></span></a>
-        <p style="margin-top:16px">Learn • Create • Earn • Grow</p>
-        <p>Digital resources for ideas, creativity and productivity.</p>
-      </div>
-      <div><h3>Explore</h3><a href="#products">All Products</a><a href="#gallery">Photo Gallery</a><a href="#about">About Hotpicka</a></div>
-      <div><h3>Customer Help</h3><a href="#faq">FAQs</a><a href="#contact">Contact</a><a href="#contact">Order Support</a></div>
-      <div><h3>Store Information</h3><a href="#contact">Privacy Policy</a><a href="#contact">Terms & Conditions</a><a href="#contact">Refund Policy</a></div>
-    </div>
-    <div class="footer-bottom"><span>© <span id="year"></span> Hotpicka Digital Products</span><span>Learn • Create • Earn • Grow</span></div>
+ <div class="container">
+  <div class="footer-grid">
+   <div>
+    <a class="brand" href="#home"><span class="brand-icon">♨</span><span><strong>Hotpicka</strong><small>DIGITAL PRODUCTS</small></span></a>
+    <p style="margin-top:15px">Learn • Create • Earn • Grow</p>
+    <p>Digital resources for creativity, learning and productivity.</p>
+   </div>
+   <div>
+    <h3>Explore</h3>
+    <a href="#products">Products</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About Hotpicka</a>
+   </div>
+   <div>
+    <h3>Customer Help</h3>
+    <a href="#faq">FAQs</a>
+    <a href="#contact">Contact</a>
+    <a href="#policies">Store Policies</a>
+    <a href="https://rzp.io/rzp/J9ASP62" target="_blank" rel="noopener noreferrer">Checkout ↗</a>
+   </div>
   </div>
+  <div class="footer-bottom">
+   <span>© <span id="year"></span> Hotpicka Digital Products</span>
+   <span>Learn • Create • Earn • Grow</span>
+  </div>
+ </div>
 </footer>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
-document.querySelectorAll(".navlinks a").forEach(function(link){
+(function(){
+ const menuButton=document.getElementById("menuButton");
+ const navlinks=document.getElementById("navlinks");
+
+ menuButton.addEventListener("click",function(){
+  const isOpen=navlinks.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded",String(isOpen));
+ });
+
+ navlinks.querySelectorAll("a").forEach(function(link){
   link.addEventListener("click",function(){
-    document.getElementById("navlinks").classList.remove("open");
+   navlinks.classList.remove("open");
+   menuButton.setAttribute("aria-expanded","false");
   });
-});
+ });
+
+ document.getElementById("year").textContent=new Date().getFullYear();
+})();
 </script>
 </body>
 </html>
