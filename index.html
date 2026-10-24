@@ -1,476 +1,1066 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080a0f">
-<meta name="description" content="Explore Hotpicka digital products, business guides, creative templates, AI prompts and planners.">
-<title>Hotpicka | Premium Digital Products</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-:root{
- --bg:#080a0f;--panel:#121722;--gold:#f6c453;
- --white:#fff;--muted:#b8bdc8;--line:#ffffff20;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
-body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--white);line-height:1.7}
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer}
-img{display:block;width:100%;object-fit:cover}
-.container{width:min(1160px,92%);margin:auto}
-section{padding:72px 0}
-h1,h2,h3{line-height:1.2}
-.gold{color:var(--gold)}
-.muted{color:var(--muted)}
-.btn{display:inline-block;border:0;border-radius:30px;padding:13px 22px;background:linear-gradient(120deg,#ffe7a6,#eab12e);color:#111;font-weight:800;text-align:center;transition:.2s}
-.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
-.btn-outline{background:transparent;border:1px solid var(--gold);color:var(--gold)}
-.eyebrow{color:var(--gold);font-size:11px;font-weight:800;letter-spacing:2.5px}
-.heading{text-align:center;margin:0 auto 38px;max-width:720px}
-.heading h2{font-size:clamp(28px,5vw,43px);margin:12px 0}
-.heading p{color:var(--muted);font-size:14px}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick Buy</title>
+    <style>
+      :root {
+        --primary: #2563eb;
+        --primary-dark: #1d4ed8;
+        --dark: #0f172a;
+        --bg: #f3f4f6;
+        --card: #ffffff;
+        --muted: #6b7280;
+        --warning: #f59e0b;
+        --danger: #dc2626;
+        --success: #16a34a;
+        --shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
+      }
 
-/* Header and navigation */
-header{position:sticky;top:0;z-index:50;background:#080a0ff5;backdrop-filter:blur(12px);border-bottom:1px solid #f6c45355}
-nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.brand{display:flex;align-items:center;gap:10px}
-.brand-icon{font-size:35px;color:var(--gold);line-height:1}
-.brand strong{display:block;font-size:23px;font-weight:900}
-.brand small{display:block;font-size:9px;color:var(--gold);letter-spacing:2px}
-.navlinks{display:flex;align-items:center;gap:20px;font-size:12px;font-weight:700}
-.navlinks a:hover{color:var(--gold)}
-.menu{display:none;background:transparent;color:white;border:1px solid var(--line);border-radius:9px;padding:8px 12px}
-.nav-buy{padding:10px 16px;font-size:12px}
+      * {
+        box-sizing: border-box;
+      }
 
-/* Hero */
-.hero{padding:62px 0;background:radial-gradient(ellipse at 85% 30%,#77531d55,transparent 50%),var(--bg)}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:40px}
-.hero h1{font-size:clamp(43px,6vw,72px);letter-spacing:-3px;margin:18px 0}
-.hero-copy{font-size:16px;color:#d0d3dc;max-width:550px}
-.hero-points{display:flex;flex-wrap:wrap;gap:10px 17px;margin:22px 0;color:#e5e5e5;font-size:12px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
-.hero-image{height:440px;position:relative;border:1px solid #f6c45388;border-radius:23px;overflow:hidden}
-.hero-image img{height:100%}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,#050609ed,transparent 75%)}
-.hero-label{position:absolute;bottom:22px;left:22px;right:22px}
-.hero-label h2{font-size:27px;margin:10px 0}
-.pill{display:inline-block;border:1px solid #f6c45388;color:var(--gold);border-radius:30px;padding:5px 11px;font-size:10px;font-weight:800;letter-spacing:1px}
+      html {
+        scroll-behavior: smooth;
+      }
 
-/* Benefits */
-.benefits{background:#10141c;border-block:1px solid var(--line)}
-.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:23px 0}
-.benefit{text-align:center}
-.benefit .symbol{font-size:27px;color:var(--gold)}
-.benefit strong{display:block;font-size:13px}
-.benefit small{color:var(--muted);font-size:11px}
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: var(--bg);
+        color: var(--dark);
+      }
 
-/* Products */
-.products{background:#0b0d13}
-.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.product{background:linear-gradient(145deg,#171d28,#0c0f15);border:1px solid var(--line);border-radius:17px;overflow:hidden;transition:.25s}
-.product:hover{transform:translateY(-5px);border-color:#f6c45399}
-.product-image{height:210px;position:relative;background:#171c25}
-.product-image img{height:100%;transition:.3s}
-.product:hover .product-image img{transform:scale(1.04)}
-.product-tag{position:absolute;top:13px;left:13px;background:var(--gold);color:#111;padding:5px 10px;border-radius:20px;font-size:10px;font-weight:900}
-.product-content{padding:20px}
-.product-content h3{font-size:19px;margin-bottom:10px}
-.product-content p{font-size:13px;color:var(--muted);min-height:65px}
-.product-content ul{list-style:none;margin:14px 0;color:#e0e2e7;font-size:12px}
-.product-content li{margin:5px 0}
-.product-content li:before{content:"✓ ";color:var(--gold);font-weight:900}
-.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:17px}
-.product-bottom small{color:var(--gold);font-size:11px}
-.product-bottom .btn{padding:10px 14px;font-size:12px}
-.payment-note{text-align:center;color:var(--muted);font-size:12px;margin-top:25px}
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
 
-/* Gallery */
-.gallery{background:#10141c}
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.gallery-item{height:205px;position:relative;overflow:hidden;border-radius:14px;border:1px solid var(--line)}
-.gallery-item img{height:100%;transition:.3s}
-.gallery-item:hover img{transform:scale(1.06)}
-.gallery-item span{position:absolute;bottom:0;left:0;right:0;padding:28px 12px 12px;background:linear-gradient(transparent,#000e);font-weight:800;font-size:13px}
+      img {
+        display: block;
+        width: 100%;
+      }
 
-/* About */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px}
-.about-image{height:370px;border-radius:20px;overflow:hidden;border:1px solid #f6c45366}
-.about-image img{height:100%}
-.about-copy h2{font-size:clamp(30px,4vw,43px);margin:12px 0}
-.about-copy p{color:var(--muted);font-size:14px;margin:14px 0}
-.check-list{list-style:none;margin:20px 0}
-.check-list li{padding:6px 0;font-size:13px}
-.check-list li:before{content:"✓";color:var(--gold);margin-right:12px;font-weight:900}
+      button, input, textarea, select {
+        font: inherit;
+      }
 
-/* How it works */
-.process{background:#11151e}
-.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.process-card{text-align:center;border:1px solid var(--line);border-radius:16px;padding:27px 20px}
-.process-number{color:var(--gold);font-size:30px;font-weight:900}
-.process-card h3{margin:10px 0}
-.process-card p{font-size:13px;color:var(--muted)}
+      .container {
+        width: min(1200px, 92%);
+        margin: 0 auto;
+      }
 
-/* Call to action */
-.cta{background:linear-gradient(120deg,#33240b,#10131a 70%);border-block:1px solid #f6c45355;text-align:center}
-.cta h2{font-size:clamp(29px,5vw,44px);margin:13px 0}
-.cta p{color:#d1d3d9;max-width:650px;margin:0 auto 22px;font-size:14px}
+      header {
+        background: linear-gradient(135deg, #0f172a, #1d4ed8);
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+      }
 
-/* FAQ */
-.faq-list{max-width:800px;margin:auto}
-details{padding:18px 5px;border-bottom:1px solid var(--line)}
-summary{cursor:pointer;font-size:14px;font-weight:700}
-details p{color:var(--muted);font-size:13px;padding-top:12px}
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 0;
+      }
 
-/* Policies */
-.policy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.policy{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
-.policy h3{color:var(--gold);font-size:15px;margin-bottom:10px}
-.policy p{color:var(--muted);font-size:12px}
+      .brand {
+        font-size: 2rem;
+        font-weight: 900;
+      }
 
-/* Footer */
-footer{background:#06070b;padding:42px 0 20px}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:28px}
-footer h3{color:var(--gold);font-size:14px;margin-bottom:12px}
-footer p,footer a{color:var(--muted);font-size:12px}
-footer a{display:block;margin:8px 0}
-footer a:hover{color:var(--gold)}
-.footer-bottom{border-top:1px solid var(--line);margin-top:30px;padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:11px}
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
 
-@media(max-width:850px){
- .menu{display:block}
- .navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:#0b0d13;padding:22px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:17px}
- .navlinks.open{display:flex}
- .navlinks a{padding:5px 0}
- .hero-grid,.about-grid{grid-template-columns:1fr}
- .hero-image{height:360px}
- .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .gallery-grid{grid-template-columns:repeat(2,1fr)}
- .benefit-grid{grid-template-columns:repeat(2,1fr)}
- .footer-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:520px){
- section{padding:53px 0}
- .hero{padding:42px 0}
- .hero h1{letter-spacing:-2px}
- .hero-image{height:290px}
- .product-grid{grid-template-columns:1fr}
- .product-image{height:230px}
- .gallery-item{height:155px}
- .process-grid,.policy-grid{grid-template-columns:1fr}
- .about-image{height:270px}
- .footer-grid{grid-template-columns:1fr 1fr;gap:20px}
- .brand strong{font-size:19px}
- .brand small{font-size:8px}
- .nav-buy{display:none}
-}
-</style>
-</head>
-<body>
+      .nav-links a {
+        color: rgba(255,255,255,0.9);
+        font-weight: 600;
+      }
 
-<header>
-<nav class="container">
- <a class="brand" href="#home" aria-label="Hotpicka home">
-  <span class="brand-icon">♨</span>
-  <span><strong>Hotpicka</strong><small>DIGITAL PRODUCTS</small></span>
- </a>
- <div class="navlinks" id="navlinks">
-  <a href="#home">Home</a>
-  <a href="#products">Products</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#about">About</a>
-  <a href="#faq">FAQ</a>
-  <a href="#contact">Contact</a>
- </div>
- <a class="btn nav-buy" href="https://rzp.io/rzp/J9ASP62" target="_blank" rel="noopener noreferrer">Checkout ↗</a>
- <button class="menu" id="menuButton" type="button" aria-expanded="false" aria-controls="navlinks">☰ Menu</button>
-</nav>
-</header>
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
 
-<main>
-<section class="hero" id="home">
- <div class="container hero-grid">
-  <div>
-   <span class="pill">YOUR DIGITAL SUCCESS STARTS HERE</span>
-   <h1><span class="gold">Hotpicka</span><br>Digital Products</h1>
-   <p class="hero-copy">Discover digital resources to help you learn new skills, create smarter content, organize your ideas and plan your online business.</p>
-   <div class="hero-points">
-    <span>✦ eBooks</span><span>✦ Templates</span>
-    <span>✦ AI Prompts</span><span>✦ Planners</span>
-   </div>
-   <div class="hero-actions">
-    <a class="btn" href="#products">Explore Products ↓</a>
-    <a class="btn btn-outline" href="#about">Discover Hotpicka</a>
-   </div>
-   <p class="muted" style="font-size:12px;margin-top:18px">Learn • Create • Earn • Grow</p>
-  </div>
-  <div class="hero-image">
-   <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85" alt="Laptop and modern digital workspace">
-   <div class="hero-overlay"></div>
-   <div class="hero-label">
-    <span class="pill">YOUR CREATIVE TOOLKIT</span>
-    <h2>Turn Ideas Into <span class="gold">Possibilities.</span></h2>
-    <p>Explore tools for your next big idea.</p>
-   </div>
-  </div>
- </div>
-</section>
+      .cart-btn {
+        background: white;
+        color: var(--dark);
+        border: none;
+        border-radius: 10px;
+        padding: 10px 14px;
+        cursor: pointer;
+        font-weight: 700;
+        position: relative;
+      }
 
-<div class="benefits">
- <div class="container benefit-grid">
-  <div class="benefit"><div class="symbol">⚡</div><strong>Digital Resources</strong><small>Explore useful tools</small></div>
-  <div class="benefit"><div class="symbol">◇</div><strong>Online Checkout</strong><small>Razorpay payment link</small></div>
-  <div class="benefit"><div class="symbol">✦</div><strong>Creative Ideas</strong><small>Plan and create</small></div>
-  <div class="benefit"><div class="symbol">♡</div><strong>Customer Support</strong><small>Help when you need it</small></div>
- </div>
-</div>
+      .cart-count {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background: var(--danger);
+        color: white;
+        border-radius: 50%;
+        width: 22px;
+        height: 22px;
+        display: grid;
+        place-items: center;
+        font-size: 12px;
+      }
 
-<section class="products" id="products">
- <div class="container">
-  <div class="heading">
-   <span class="eyebrow">EXPLORE THE COLLECTION</span>
-   <h2>Digital Products for <span class="gold">Big Ideas</span></h2>
-   <p>Choose a resource category, then use its Buy Now button to continue to the configured checkout.</p>
-  </div>
-  <div class="product-grid">
+      .btn {
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 12px 18px;
+        font-weight: 700;
+        cursor: pointer;
+      }
 
-   <article class="product">
-    <div class="product-image">
-     <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=85" alt="Books and learning resources" loading="lazy">
-     <span class="product-tag">LEARN</span>
-    </div>
-    <div class="product-content">
-     <h3>Digital eBooks</h3>
-     <p>Reading resources for learning, business ideas and personal development.</p>
-     <ul><li>Step-by-step guides</li><li>Business learning ideas</li><li>Digital reading resources</li></ul>
-     <div class="product-bottom"><small>Digital resource</small><a class="btn" href="https://rzp.io/rzp/J9ASP62" target="_blank" rel="noopener noreferrer">Buy Now ↗</a></div>
-    </div>
-   </article>
+      .btn:hover {
+        background: var(--primary-dark);
+      }
 
-   <article class="product">
-    <div class="product-image">
-     <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=85" alt="Writing and creative planning" loading="lazy">
-     <span class="product-tag">CREATE</span>
-    </div>
-    <div class="product-content">
-     <h3>Creative Templates</h3>
-     <p>Organize your content and make everyday creative work easier to plan.</p>
-     <ul><li>Social post layouts</li><li>Promotional design ideas</li><li>Planning sheets</li></ul>
-     <div class="product-bottom"><small>Creative toolkit</small><a class="btn" href="https://rzp.io/rzp/J9ASP62" target="_blank" rel="noopener noreferrer">Buy Now ↗</a></div>
-    </div>
-   </article>
+      .btn-outline {
+        background: transparent;
+        border: 2px solid white;
+        color: white;
+      }
 
-   <article class="product">
-    <div class="product-image">
-     <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=85" alt="Artificial intelligence technology" loading="lazy">
-     <span class="product-tag">WORK SMARTER</span>
-    </div>
-    <div class="product-content">
-     <h3>AI Prompt Library</h3>
-     <p>Prompt ideas for brainstorming, content drafting and marketing plans.</p>
-     <ul><li>Content creation prompts</li><li>Marketing ideas</li><li>Business planning prompts</li></ul>
-     <div class="product-bottom"><small>AI productivity</small><a class="btn" href="https://rzp.io/rzp/J9ASP62" target="_blank" rel="noopener noreferrer">Buy Now ↗</a></div>
-    </div>
-   </article>
+      .hero {
+        background: linear-gradient(135deg, #0b1120, #1d4ed8);
+        color: white;
+        padding: 70px 0 50px;
+      }
 
-   <article class="product">
-    <div class="product-image">
-     <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=85" alt="Business planning workspace" loading="lazy">
-     <span class="product-tag">STAY FOCUSED</span>
-    </div>
-    <div class="product-content">
-     <h3>Business Planners</h3>
-     <p>Bring your goals, weekly tasks and project plans together.</p>
-     <ul><li>Task planning ideas</li><li>Goal-setting worksheets</li><li>Business checklists</li></ul>
-     <div class="product-bottom"><small>Plan with purpose</small><a class="btn" href="https://rzp.io/rzp/J9ASP62" target="_blank" rel="noopener noreferrer">Buy Now ↗</a></div>
-    </div>
-   </article>
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 30px;
+      }
 
-   <article class="product">
-    <div class="product-image">
-     <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=800&q=85" alt="Social media and content creation" loading="lazy">
-     <span class="product-tag">GROW YOUR BRAND</span>
-    </div>
-    <div class="product-content">
-     <h3>Social Media Resources</h3>
-     <p>Plan social content and organize ideas for your online presence.</p>
-     <ul><li>Content calendars</li><li>Post ideas</li><li>Campaign planning</li></ul>
-     <div class="product-bottom"><small>Content resources</small><a class="btn" href="https://rzp.io/rzp/J9ASP62" target="_blank" rel="noopener noreferrer">Buy Now ↗</a></div>
-    </div>
-   </article>
+      .hero h1 {
+        font-size: clamp(2.5rem, 4vw, 4rem);
+        margin: 0 0 20px;
+      }
 
-   <article class="product">
-    <div class="product-image">
-     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=85" alt="Digital business analytics on a laptop" loading="lazy">
-     <span class="product-tag">BUILD & GROW</span>
-    </div>
-    <div class="product-content">
-     <h3>Digital Business Toolkit</h3>
-     <p>Explore resources for planning, content organization and business workflows.</p>
-     <ul><li>Starter resources</li><li>Marketing checklists</li><li>Growth planning ideas</li></ul>
-     <div class="product-bottom"><small>Business resources</small><a class="btn" href="https://rzp.io/rzp/J9ASP62" target="_blank" rel="noopener noreferrer">Buy Now ↗</a></div>
-    </div>
-   </article>
+      .hero p {
+        font-size: 1.08rem;
+        line-height: 1.8;
+        color: rgba(255,255,255,0.85);
+        margin-bottom: 25px;
+      }
 
-  </div>
-  <p class="payment-note">Checkout opens through Razorpay. Confirm the displayed price, product details and payment terms before paying.</p>
- </div>
-</section>
+      .hero-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
 
-<section class="gallery" id="gallery">
- <div class="container">
-  <div class="heading">
-   <span class="eyebrow">THE HOTPICKA EXPERIENCE</span>
-   <h2>A World of <span class="gold">Digital Creativity</span></h2>
-   <p>Ideas and inspiration for your next project.</p>
-  </div>
-  <div class="gallery-grid">
-   <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="Digital collaboration" loading="lazy"><span>Work Smarter</span></div>
-   <div class="gallery-item"><img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=600&q=80" alt="Creative workspace" loading="lazy"><span>Create Anywhere</span></div>
-   <div class="gallery-item"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&q=80" alt="Team planning" loading="lazy"><span>Plan Your Goals</span></div>
-   <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="People working with technology" loading="lazy"><span>Build Your Ideas</span></div>
-  </div>
- </div>
-</section>
+      .hero-card {
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 24px;
+        padding: 18px;
+      }
 
-<section id="about">
- <div class="container about-grid">
-  <div class="about-image">
-   <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85" alt="Modern professional workspace" loading="lazy">
-  </div>
-  <div class="about-copy">
-   <span class="eyebrow">WHY HOTPICKA?</span>
-   <h2>Your Ideas Deserve <span class="gold">Better Tools.</span></h2>
-   <p>Hotpicka Digital Products brings together resource categories to support learning, creativity and business organization.</p>
-   <ul class="check-list">
-    <li>Resources for creators and entrepreneurs</li>
-    <li>Content and marketing planning ideas</li>
-    <li>Tools for everyday productivity</li>
-    <li>Convenient online checkout</li>
-    <li>A collection for your digital journey</li>
-   </ul>
-   <a class="btn" href="#products">Explore Products →</a>
-  </div>
- </div>
-</section>
+      .hero-img {
+        overflow: hidden;
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
 
-<section class="process">
- <div class="container">
-  <div class="heading">
-   <span class="eyebrow">SIMPLE AND CONVENIENT</span>
-   <h2>How It <span class="gold">Works</span></h2>
-   <p>Three simple steps to explore a digital resource.</p>
-  </div>
-  <div class="process-grid">
-   <div class="process-card"><div class="process-number">01</div><h3>Explore</h3><p>Browse the collection and select the resource you want.</p></div>
-   <div class="process-card"><div class="process-number">02</div><h3>Checkout</h3><p>Open the configured Razorpay payment link and check the amount and details.</p></div>
-   <div class="process-card"><div class="process-number">03</div><h3>Get Your Product</h3><p>Follow the delivery instructions supplied by the store owner after purchase.</p></div>
-  </div>
- </div>
-</section>
+      .hero-img img {
+        height: 420px;
+        object-fit: cover;
+      }
 
-<section class="cta" id="contact">
- <div class="container">
-  <span class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</span>
-  <h2>Ready to Explore <span class="gold">Hotpicka?</span></h2>
-  <p>Find resources for learning, creating, planning and growing your digital ideas.</p>
-  <a class="btn" href="#products">Shop Digital Products →</a>
-  <p style="font-size:12px;margin-top:18px">Customer support: Add your official business email before publishing.</p>
- </div>
-</section>
+      section {
+        padding: 65px 0;
+      }
 
-<section id="faq">
- <div class="container">
-  <div class="heading">
-   <span class="eyebrow">HELP CENTER</span>
-   <h2>Frequently Asked <span class="gold">Questions</span></h2>
-  </div>
-  <div class="faq-list">
-   <details><summary>What can I find at Hotpicka?</summary><p>Explore digital resource categories such as eBooks, templates, AI prompts, planners and social media resources. Check the specific product listing for the actual contents.</p></details>
-   <details><summary>How do I make a payment?</summary><p>Click Buy Now to open the configured Razorpay link. Verify the amount, seller details and product information before paying.</p></details>
-   <details><summary>Is the same payment link used for every product?</summary><p>Yes. This version uses the same Razorpay link for every Buy Now button. The amount and payment terms are determined by that link's configuration.</p></details>
-   <details><summary>How will I receive my digital product?</summary><p>Follow the delivery instructions provided by the store owner. Automatic delivery is not enabled by this HTML code alone.</p></details>
-   <details><summary>How can I contact customer support?</summary><p>Please use the official contact details published by the store owner. The business email needs to be added before the website goes live.</p></details>
-   <details><summary>What about refunds?</summary><p>Review the seller's published refund terms and applicable consumer rights before purchase. The store owner must publish a real refund policy.</p></details>
-  </div>
- </div>
-</section>
+      .section-title {
+        text-align: center;
+        font-size: clamp(2rem, 3vw, 2.6rem);
+        margin: 0 0 12px;
+      }
 
-<section id="policies">
- <div class="container">
-  <div class="heading">
-   <span class="eyebrow">STORE INFORMATION</span>
-   <h2>Our <span class="gold">Policies</span></h2>
-   <p>Store owner: complete and publish policies that accurately reflect your business before accepting orders.</p>
-  </div>
-  <div class="policy-grid">
-   <article class="policy">
-    <h3>Privacy Policy</h3>
-    <p>Explain what customer information is collected, why it is used, how it is protected and how customers can contact you about privacy. Publish the actual policy before launch.</p>
-   </article>
-   <article class="policy">
-    <h3>Terms & Conditions</h3>
-    <p>Describe product contents, permitted use, payment terms, digital delivery, customer responsibilities and applicable legal terms.</p>
-   </article>
-   <article class="policy">
-    <h3>Refund Policy</h3>
-    <p>State your actual cancellation, refund and support process for digital products, consistent with applicable law and payment-provider requirements.</p>
-   </article>
-  </div>
- </div>
-</section>
-</main>
+      .section-subtitle {
+        text-align: center;
+        color: var(--muted);
+        margin: 0 0 30px;
+      }
 
-<footer>
- <div class="container">
-  <div class="footer-grid">
-   <div>
-    <a class="brand" href="#home"><span class="brand-icon">♨</span><span><strong>Hotpicka</strong><small>DIGITAL PRODUCTS</small></span></a>
-    <p style="margin-top:15px">Learn • Create • Earn • Grow</p>
-    <p>Digital resources for creativity, learning and productivity.</p>
-   </div>
-   <div>
-    <h3>Explore</h3>
-    <a href="#products">Products</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#about">About Hotpicka</a>
-   </div>
-   <div>
-    <h3>Customer Help</h3>
-    <a href="#faq">FAQs</a>
-    <a href="#contact">Contact</a>
-    <a href="#policies">Store Policies</a>
-    <a href="https://rzp.io/rzp/J9ASP62" target="_blank" rel="noopener noreferrer">Checkout ↗</a>
-   </div>
-  </div>
-  <div class="footer-bottom">
-   <span>© <span id="year"></span> Hotpicka Digital Products</span>
-   <span>Learn • Create • Earn • Grow</span>
-  </div>
- </div>
-</footer>
+      .features {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(180px, 1fr));
+        gap: 22px;
+      }
 
-<script>
-(function(){
- const menuButton=document.getElementById("menuButton");
- const navlinks=document.getElementById("navlinks");
+      .feature-card {
+        background: white;
+        border-radius: 18px;
+        padding: 25px 18px;
+        text-align: center;
+        box-shadow: var(--shadow);
+      }
 
- menuButton.addEventListener("click",function(){
-  const isOpen=navlinks.classList.toggle("open");
-  menuButton.setAttribute("aria-expanded",String(isOpen));
- });
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: #dbeafe;
+        font-size: 28px;
+        margin: 0 auto 15px;
+      }
 
- navlinks.querySelectorAll("a").forEach(function(link){
-  link.addEventListener("click",function(){
-   navlinks.classList.remove("open");
-   menuButton.setAttribute("aria-expanded","false");
-  });
- });
+      .feature-card h3 {
+        margin: 0 0 8px;
+      }
 
- document.getElementById("year").textContent=new Date().getFullYear();
-})();
-</script>
-</body>
+      .feature-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 22px;
+      }
+
+      .product-card {
+        background: white;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: transform 0.2s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-4px);
+      }
+
+      .product-card img {
+        height: 220px;
+        object-fit: cover;
+      }
+
+      .product-info {
+        padding: 18px 16px 16px;
+      }
+
+      .product-name {
+        margin: 0 0 10px;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      .product-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      .rating {
+        color: var(--warning);
+        font-weight: bold;
+      }
+
+      .price {
+        font-size: 1.7rem;
+        font-weight: 900;
+        color: var(--primary-dark);
+        margin: 0 0 14px;
+      }
+
+      .product-actions {
+        display: flex;
+        gap: 10px;
+      }
+
+      .product-actions .btn {
+        flex: 1;
+        padding: 10px 12px;
+      }
+
+      .review-section {
+        background: #eef4ff;
+      }
+
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 22px;
+      }
+
+      .review-card {
+        background: white;
+        border-radius: 18px;
+        padding: 20px;
+        box-shadow: var(--shadow);
+      }
+
+      .review-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .review-name {
+        font-weight: 700;
+      }
+
+      .stars {
+        color: var(--warning);
+        letter-spacing: 1px;
+        font-size: 1.1rem;
+      }
+
+      .review-card p {
+        margin: 0;
+        color: #374151;
+        line-height: 1.8;
+      }
+
+      .admin-panel {
+        background: white;
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        padding: 22px;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(180px, 1fr));
+        gap: 18px;
+        margin-bottom: 24px;
+      }
+
+      .stat-box {
+        background: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        padding: 18px;
+      }
+
+      .stat-box .label {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+
+      .stat-box .value {
+        font-weight: 900;
+        font-size: 2rem;
+      }
+
+      .admin-layout {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 24px;
+      }
+
+      .form-panel {
+        background: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        padding: 18px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      input, textarea, select {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid #d1d5db;
+        border-radius: 10px;
+        font-size: 15px;
+      }
+
+      textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+
+      .admin-product-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+        margin-top: 16px;
+      }
+
+      .admin-product-item {
+        background: #fafafa;
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        padding: 12px;
+      }
+
+      .admin-product-item img {
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+
+      .admin-product-item h4 {
+        margin: 0 0 8px;
+      }
+
+      .small {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .delete-btn {
+        background: var(--danger);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 12px;
+        cursor: pointer;
+        margin-top: 10px;
+        font-weight: 700;
+      }
+
+      .cart-drawer {
+        position: fixed;
+        top: 0;
+        right: -420px;
+        width: 380px;
+        height: 100vh;
+        background: white;
+        box-shadow: -8px 0 30px rgba(0,0,0,0.18);
+        z-index: 100;
+        padding: 20px;
+        transition: right 0.25s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .cart-drawer.open {
+        right: 0;
+      }
+
+      .cart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .close-cart {
+        background: transparent;
+        border: none;
+        font-size: 32px;
+        cursor: pointer;
+      }
+
+      .cart-items {
+        margin-top: 16px;
+        overflow-y: auto;
+        flex: 1;
+      }
+
+      .cart-item {
+        display: flex;
+        gap: 12px;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 10px;
+        margin-bottom: 12px;
+      }
+
+      .cart-item img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .cart-item h4 {
+        margin: 0 0 8px;
+      }
+
+      .cart-item .qty {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 6px;
+      }
+
+      .cart-footer {
+        border-top: 1px solid #e5e7eb;
+        padding-top: 14px;
+      }
+
+      .total-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 14px;
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
+      .empty-cart {
+        color: var(--muted);
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      footer {
+        background: #0f172a;
+        color: white;
+        text-align: center;
+        padding: 22px 0;
+      }
+
+      @media (max-width: 900px) {
+        .hero-grid,
+        .admin-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .features {
+          grid-template-columns: repeat(2, minmax(180px, 1fr));
+        }
+
+        .stats {
+          grid-template-columns: repeat(2, minmax(160px, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .nav {
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+
+        .nav-links {
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .features,
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .cart-drawer {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="brand">Quick Buy</div>
+
+        <nav class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#products">Products</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#admin">Admin</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="btn btn-outline" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop</button>
+          <button class="cart-btn" id="cartButton">
+            Cart
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <h1>Best Natural Care Starts Here</h1>
+          <p>
+            Quick Buy aapke liye premium wellness, personal care aur natural health products laata hai.
+            Sabse favourite product hai Keshora Oil — jo skin, hair aur daily care ke liye bahut useful hai.
+          </p>
+          <div class="hero-actions">
+            <button class="btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Products Dekho</button>
+            <button class="btn btn-outline" onclick="document.getElementById('admin').scrollIntoView({behavior:'smooth'})">Admin Panel</button>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-img">
+            <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=900&q=80" alt="Keshora Oil" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">Quick Buy Kyun Choose Karein</h2>
+        <p class="section-subtitle">Best quality, affordable price, reliable delivery.</p>
+
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">✅</div>
+            <h3>Premium Quality</h3>
+            <p>Safe, effective aur trusted products.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🚚</div>
+            <h3>Fast Delivery</h3>
+            <p>Quick orders aur reliable delivery.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3>Affordable</h3>
+            <p>Best price ke saath quality.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">⭐</div>
+            <h3>Customer Love</h3>
+            <p>Happy buyers aur repeated trust.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <h2 class="section-title">Featured Products</h2>
+        <p class="section-subtitle">Natural ingredients ke saath real results.</p>
+
+        <div id="productGrid" class="product-grid"></div>
+      </div>
+    </section>
+
+    <section class="review-section" id="reviews">
+      <div class="container">
+        <h2 class="section-title">Customer Reviews</h2>
+        <p class="section-subtitle">What our customers say about Quick Buy.</p>
+
+        <div id="reviewGrid" class="reviews-grid"></div>
+      </div>
+    </section>
+
+    <section id="admin">
+      <div class="container">
+        <h2 class="section-title">Admin Panel</h2>
+        <p class="section-subtitle">Manage products, sales, aur reviews.</p>
+
+        <div class="admin-panel">
+          <div class="stats">
+            <div class="stat-box">
+              <div class="label">Total Products</div>
+              <div id="totalProducts" class="value">0</div>
+            </div>
+
+            <div class="stat-box">
+              <div class="label">Total Sales</div>
+              <div id="totalSales" class="value">0</div>
+            </div>
+
+            <div class="stat-box">
+              <div class="label">Revenue</div>
+              <div id="revenue" class="value">$0</div>
+            </div>
+
+            <div class="stat-box">
+              <div class="label">Reviews</div>
+              <div id="reviewCount" class="value">0</div>
+            </div>
+          </div>
+
+          <div class="admin-layout">
+            <div class="form-panel">
+              <h3>Add Product</h3>
+              <form id="productForm">
+                <input type="text" id="productName" value="Keshora Oil" placeholder="Product name" required />
+                <input type="number" id="productPrice" placeholder="Price" min="0" step="0.01" required />
+                <input type="text" id="productCategory" placeholder="Category" required />
+                <input type="number" id="productStock" placeholder="Stock" min="0" required />
+                <input type="number" id="productSales" placeholder="Sales count" min="0" required />
+                <input type="url" id="productImage" placeholder="Image URL" required />
+                <button type="submit" class="btn">Add Product</button>
+              </form>
+            </div>
+
+            <div class="form-panel">
+              <h3>Add Review</h3>
+              <form id="reviewForm">
+                <input type="text" id="reviewName" placeholder="Customer name" required />
+                <select id="reviewRating" required>
+                  <option value="5">5 Stars</option>
+                  <option value="4">4 Stars</option>
+                  <option value="3">3 Stars</option>
+                  <option value="2">2 Stars</option>
+                  <option value="1">1 Star</option>
+                </select>
+                <textarea id="reviewComment" placeholder="Review likhein..." required></textarea>
+                <button type="submit" class="btn">Submit Review</button>
+              </form>
+            </div>
+          </div>
+
+          <div style="margin-top: 26px;">
+            <h3>Current Product List</h3>
+            <div id="adminProductList" class="admin-product-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Quick Buy. All rights reserved.
+    </footer>
+
+    <aside class="cart-drawer" id="cartDrawer">
+      <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button class="close-cart" id="closeCart" aria-label="Close cart">&times;</button>
+      </div>
+
+      <div class="cart-items" id="cartItems"></div>
+
+      <div class="cart-footer">
+        <div class="total-row">
+          <span>Total</span>
+          <span id="cartTotal">$0.00</span>
+        </div>
+        <button class="btn" style="width:100%;" id="checkoutBtn">Checkout</button>
+      </div>
+    </aside>
+
+    <script>
+      const STORAGE_KEY = "quickbuy_data_v1";
+
+      const defaultProducts = [
+        { id: 1, name: "Keshora Oil", category: "Herbal Care", price: 350, stock: 48, sales: 22, rating: 5, image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=80" },
+        { id: 2, name: "Keshora Oil Classic", category: "Herbal Care", price: 380, stock: 40, sales: 18, rating: 4.8, image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=900&q=80" },
+        { id: 3, name: "Keshora Oil Plus", category: "Herbal Care", price: 420, stock: 36, sales: 21, rating: 4.9, image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80" },
+        { id: 4, name: "Keshora Oil Glow", category: "Skin Care", price: 460, stock: 33, sales: 19, rating: 4.7, image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=80" },
+        { id: 5, name: "Keshora Oil Fresh", category: "Hair Care", price: 390, stock: 42, sales: 20, rating: 4.8, image: "https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=900&q=80" },
+        { id: 6, name: "Keshora Oil Pure", category: "Natural Health", price: 440, stock: 29, sales: 17, rating: 4.9, image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80" },
+        { id: 7, name: "Keshora Oil Gold", category: "Beauty", price: 500, stock: 32, sales: 16, rating: 4.7, image: "https://images.unsplash.com/photo-1563170351-bc7f9d1f94c2?auto=format&fit=crop&w=900&q=80" },
+        { id: 8, name: "Keshora Oil Care", category: "Wellness", price: 420, stock: 34, sales: 15, rating: 4.8, image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80" },
+        { id: 9, name: "Keshora Oil Daily", category: "Daily Care", price: 360, stock: 52, sales: 28, rating: 4.6, image: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=900&q=80" },
+        { id: 10, name: "Keshora Oil Soft", category: "Personal Care", price: 370, stock: 47, sales: 14, rating: 4.7, image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=80" }
+      ];
+
+      const defaultReviews = [
+        { id: 1, name: "Ali", rating: 5, text: "Keshora Oil bahut accha hai. Meri skin soft aur healthy lagti hai." },
+        { id: 2, name: "Sara", rating: 5, text: "Quick Buy se product lene se bahut satisfied hoon." },
+        { id: 3, name: "Usman", rating: 4, text: "Delivery fast thi aur quality bhi acchi hai." },
+        { id: 4, name: "Ayesha", rating: 5, text: "Best product and affordable pricing." }
+      ];
+
+      let products = JSON.parse(localStorage.getItem(STORAGE_KEY))?.products || defaultProducts;
+      let reviews = JSON.parse(localStorage.getItem(STORAGE_KEY))?.reviews || defaultReviews;
+      let cart = JSON.parse(localStorage.getItem(STORAGE_KEY))?.cart || [];
+
+      function saveData() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({ products, reviews, cart }));
+      }
+
+      function getProductById(id) {
+        return products.find(p => p.id === id);
+      }
+
+      function addToCart(productId) {
+        const product = getProductById(productId);
+        if (!product) return;
+
+        const existing = cart.find(item => item.id === productId);
+
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({ id: product.id, qty: 1 });
+        }
+
+        saveData();
+        renderCart();
+        updateCartCount();
+      }
+
+      function removeFromCart(productId) {
+        cart = cart.filter(item => item.id !== productId);
+        saveData();
+        renderCart();
+        updateCartCount();
+      }
+
+      function changeQty(productId, newQty) {
+        const item = cart.find(i => i.id === productId);
+        if (!item) return;
+
+        if (newQty <= 0) {
+          removeFromCart(productId);
+          return;
+        }
+
+        item.qty = newQty;
+        saveData();
+        renderCart();
+        updateCartCount();
+      }
+
+      function renderProducts() {
+        const productGrid = document.getElementById("productGrid");
+        productGrid.innerHTML = "";
+
+        products.forEach(product => {
+          const card = document.createElement("div");
+          card.className = "product-card";
+
+          card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" />
+            <div class="product-info">
+              <p class="product-name">${product.name}</p>
+
+              <div class="product-meta">
+                <span>${product.category}</span>
+                <span class="rating">★ ${product.rating}</span>
+              </div>
+
+              <p class="price">$${Number(product.price).toFixed(2)}</p>
+
+              <div class="product-actions">
+                <button class="btn" data-id="${product.id}">Add to Cart</button>
+              </div>
+            </div>
+          `;
+
+          productGrid.appendChild(card);
+        });
+
+        document.querySelectorAll(".product-card .btn").forEach(btn => {
+          btn.addEventListener("click", () => {
+            addToCart(Number(btn.dataset.id));
+          });
+        });
+      }
+
+      function renderReviews() {
+        const reviewGrid = document.getElementById("reviewGrid");
+        reviewGrid.innerHTML = "";
+
+        reviews.forEach(review => {
+          const stars = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+
+          const card = document.createElement("div");
+          card.className = "review-card";
+
+          card.innerHTML = `
+            <div class="review-header">
+              <div class="review-name">${review.name}</div>
+              <div class="stars">${stars}</div>
+            </div>
+            <p>${review.text}</p>
+          `;
+
+          reviewGrid.appendChild(card);
+        });
+      }
+
+      function renderAdminProducts() {
+        const list = document.getElementById("adminProductList");
+        list.innerHTML = "";
+
+        products.forEach(product => {
+          const item = document.createElement("div");
+          item.className = "admin-product-item";
+
+          item.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" />
+            <h4>${product.name}</h4>
+            <div class="small">Price: $${Number(product.price).toFixed(2)}</div>
+            <div class="small">Stock: ${product.stock}</div>
+            <div class="small">Sales: ${product.sales}</div>
+            <button class="delete-btn" data-id="${product.id}">Delete</button>
+          `;
+
+          list.appendChild(item);
+        });
+
+        document.querySelectorAll(".delete-btn").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const id = Number(btn.dataset.id);
+            products = products.filter(p => p.id !== id);
+            cart = cart.filter(item => item.id !== id);
+
+            saveData();
+            renderAll();
+          });
+        });
+      }
+
+      function updateStats() {
+        document.getElementById("totalProducts").textContent = products.length;
+        document.getElementById("totalSales").textContent = products.reduce((sum, p) => sum + Number(p.sales), 0);
+        const revenue = products.reduce((sum, p) => sum + (Number(p.price) * Number(p.sales)), 0);
+        document.getElementById("revenue").textContent = `$${revenue.toFixed(2)}`;
+        document.getElementById("reviewCount").textContent = reviews.length;
+      }
+
+      function renderCart() {
+        const cartItems = document.getElementById("cartItems");
+        cartItems.innerHTML = "";
+
+        if (cart.length === 0) {
+          cartItems.innerHTML = `<div class="empty-cart">Cart empty hai. Product add karo.</div>`;
+          document.getElementById("cartTotal").textContent = "$0.00";
+          return;
+        }
+
+        let total = 0;
+
+        cart.forEach(item => {
+          const product = getProductById(item.id);
+          if (!product) return;
+
+          total += product.price * item.qty;
+
+          const cartItem = document.createElement("div");
+          cartItem.className = "cart-item";
+
+          cartItem.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" />
+            <div style="flex:1;">
+              <h4>${product.name}</h4>
+              <div class="small">$${product.price.toFixed(2)}</div>
+              <div class="qty">
+                <div style="display:flex; gap:8px; align-items:center;">
+                  <button class="btn" style="padding:6px 8px; font-size:12px;" data-action="minus" data-id="${product.id}">-</button>
+                  <span>${item.qty}</span>
+                  <button class="btn" style="padding:6px 8px; font-size:12px;" data-action="plus" data-id="${product.id}">+</button>
+                </div>
+                <button class="delete-btn" data-action="remove" data-id="${product.id}">Remove</button>
+              </div>
+            </div>
+          `;
+
+          cartItems.appendChild(cartItem);
+        });
+
+        document.getElementById("cartTotal").textContent = `$${total.toFixed(2)}`;
+
+        document.querySelectorAll("[data-action='plus']").forEach(btn => {
+          btn.addEventListener("click", () => changeQty(Number(btn.dataset.id), cart.find(i => i.id === Number(btn.dataset.id)).qty + 1));
+        });
+
+        document.querySelectorAll("[data-action='minus']").forEach(btn => {
+          btn.addEventListener("click", () => changeQty(Number(btn.dataset.id), cart.find(i => i.id === Number(btn.dataset.id)).qty - 1));
+        });
+
+        document.querySelectorAll("[data-action='remove']").forEach(btn => {
+          btn.addEventListener("click", () => removeFromCart(Number(btn.dataset.id)));
+        });
+      }
+
+      function updateCartCount() {
+        const count = cart.reduce((sum, item) => sum + item.qty, 0);
+        document.getElementById("cartCount").textContent = count;
+      }
+
+      function renderAll() {
+        renderProducts();
+        renderReviews();
+        renderAdminProducts();
+        renderCart();
+        updateCartCount();
+        updateStats();
+      }
+
+      document.getElementById("productForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const newProduct = {
+          id: Date.now(),
+          name: document.getElementById("productName").value || "Keshora Oil",
+          category: document.getElementById("productCategory").value,
+          price: Number(document.getElementById("productPrice").value),
+          stock: Number(document.getElementById("productStock").value),
+          sales: Number(document.getElementById("productSales").value),
+          rating: 4.8,
+          image: document.getElementById("productImage").value
+        };
+
+        products.push(newProduct);
+        saveData();
+        renderAll();
+        this.reset();
+        document.getElementById("productName").value = "Keshora Oil";
+      });
+
+      document.getElementById("reviewForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const newReview = {
+          id: Date.now(),
+          name: document.getElementById("reviewName").value,
+          rating: Number(document.getElementById("reviewRating").value),
+          text: document.getElementById("reviewComment").value
+        };
+
+        reviews.push(newReview);
+        saveData();
+        renderAll();
+        this.reset();
+      });
+
+      document.getElementById("cartButton").addEventListener("click", () => {
+        document.getElementById("cartDrawer").classList.add("open");
+      });
+
+      document.getElementById("closeCart").addEventListener("click", () => {
+        document.getElementById("cartDrawer").classList.remove("open");
+      });
+
+      document.getElementById("checkoutBtn").addEventListener("click", () => {
+        if (cart.length === 0) {
+          alert("Cart khali hai. Product add karo.");
+          return;
+        }
+
+        alert("Order placed successfully! Thank you for shopping with Quick Buy.");
+        cart = [];
+        saveData();
+        renderAll();
+        document.getElementById("cartDrawer").classList.remove("open");
+      });
+
+      renderAll();
+    </script>
+  </body>
 </html>
