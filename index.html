@@ -1,252 +1,1119 @@
-AdminHTML
-
 <!DOCTYPE html>
-<html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>orveena.in - Admin Panel</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VELO DIGITAL PRODUCTS</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f6f9; color: #333; }
-        .sidebar { width: 250px; background: #2c3e50; height: 100vh; position: fixed; color: #fff; padding: 20px; }
-        .sidebar h2 { margin-bottom: 30px; font-size: 22px; text-align: center; color: #4af; }
-        .sidebar ul { list-style: none; }
-        .sidebar ul li { padding: 12px; margin-bottom: 10px; background: #34495e; border-radius: 5px; cursor: pointer; transition: 0.3s; }
-        .sidebar ul li:hover { background: #1abc9c; }
-        .main-content { margin-left: 260px; padding: 20px; }
-        .header { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 25px; }
-        .card { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 5px solid #1abc9c; }
-        .card h3 { font-size: 14px; color: #777; margin-bottom: 10px; }
-        .card p { font-size: 24px; font-weight: bold; color: #2c3e50; }
-        .section-box { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 25px; }
-        .section-box h3 { margin-bottom: 15px; color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 8px; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
-        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
-        .btn { padding: 10px 20px; background: #1abc9c; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
-        .btn:hover { background: #16a085; }
-        .btn-danger { background: #e74c3c; padding: 6px 12px; font-size: 14px; }
-        .btn-danger:hover { background: #c0392b; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        table th, table td { padding: 12px; border: 1px solid #eee; text-align: left; }
-        table th { background: #f8f9fa; }
+      :root {
+        --bg: #0b1020;
+        --panel: #111827;
+        --panel-2: #1f2937;
+        --card: #f8fafc;
+        --text: #0f172a;
+        --muted: #475569;
+        --line: #e2e8f0;
+        --accent: #7c3aed;
+        --accent-2: #ec4899;
+        --gold: #fbbf24;
+        --green: #10b981;
+        --danger: #ef4444;
+        --shadow: 0 18px 40px rgba(15, 23, 42, 0.15);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+        color: var(--text);
+      }
+      a { text-decoration: none; color: inherit; }
+      img { width: 100%; display: block; }
+      button, input, select, textarea { font: inherit; }
+      .container { width: min(1200px, 92%); margin: 0 auto; }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(11, 16, 32, 0.88);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 76px;
+      }
+      .brand {
+        font-size: 2rem;
+        font-weight: 900;
+        color: white;
+        letter-spacing: 1px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+      }
+      .nav-links a {
+        color: rgba(255,255,255,0.82);
+        font-weight: 600;
+      }
+      .nav-links a:hover {
+        color: white;
+      }
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .btn {
+        border: none;
+        border-radius: 12px;
+        padding: 12px 18px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 12px 24px rgba(124, 58, 237, 0.25);
+      }
+      .btn-alt {
+        background: transparent;
+        border: 2px solid white;
+        color: white;
+      }
+      .cart-button {
+        position: relative;
+        background: white;
+        color: var(--text);
+        border: none;
+        border-radius: 12px;
+        padding: 11px 16px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .cart-badge {
+        position: absolute;
+        top: -6px;
+        right: -6px;
+        background: var(--danger);
+        color: white;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-size: 12px;
+      }
+
+      .hero {
+        background: radial-gradient(circle at top left, rgba(124,58,237,0.2), transparent 35%),
+                    linear-gradient(135deg, #0b1020, #111827 40%, #181f2f);
+        color: white;
+        padding: 80px 0 70px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 30px;
+        align-items: center;
+      }
+      .eyebrow {
+        display: inline-block;
+        padding: 8px 14px;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.14);
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .hero h1 {
+        margin: 18px 0 18px;
+        font-size: clamp(2.5rem, 6vw, 4.6rem);
+        line-height: 1.05;
+      }
+      .hero p {
+        color: rgba(255,255,255,0.8);
+        font-size: 1.08rem;
+        line-height: 1.7;
+        margin-bottom: 26px;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .hero-panel {
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 24px;
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+      .hero-panel img {
+        height: 420px;
+        object-fit: cover;
+        border-radius: 18px;
+      }
+      .hero-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 24px;
+      }
+      .metric {
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 14px;
+        padding: 16px 14px;
+        text-align: center;
+      }
+      .metric strong {
+        display: block;
+        font-size: 1.6rem;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+      .section-head {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .section-head h2 {
+        font-size: clamp(2rem, 3vw, 3rem);
+        margin: 0 0 12px;
+      }
+      .section-head p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(200px, 1fr));
+        gap: 20px;
+      }
+      .feature-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 24px 18px;
+        box-shadow: var(--shadow);
+        text-align: center;
+      }
+      .feature-icon {
+        width: 62px;
+        height: 62px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(236,72,153,0.12));
+        display: grid;
+        place-items: center;
+        margin: 0 auto 14px;
+        font-size: 28px;
+      }
+      .feature-card h3 {
+        margin: 0 0 10px;
+      }
+      .feature-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 22px;
+      }
+      .product-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 22px 38px rgba(15, 23, 42, 0.12);
+      }
+      .product-card img {
+        height: 220px;
+        object-fit: cover;
+      }
+      .product-info {
+        padding: 18px 16px 20px;
+      }
+      .product-info h3 {
+        margin: 0 0 10px;
+        font-size: 1.2rem;
+      }
+      .product-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+      .stars {
+        color: var(--gold);
+      }
+      .price {
+        font-size: 2rem;
+        color: var(--accent);
+        font-weight: 900;
+        margin: 0 0 14px;
+      }
+      .product-actions {
+        display: flex;
+        gap: 10px;
+      }
+      .product-actions .btn {
+        flex: 1;
+        padding: 11px 12px;
+      }
+      .btn-light {
+        background: #f3f4f6;
+        color: var(--text);
+        border: 1px solid var(--line);
+        box-shadow: none;
+      }
+
+      .review-section {
+        background: linear-gradient(180deg, #eef2ff 0%, #f8fafc 100%);
+      }
+      .reviews {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 22px;
+      }
+      .review-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 22px;
+        box-shadow: var(--shadow);
+      }
+      .review-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+      .review-name {
+        font-weight: 700;
+      }
+      .review-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .admin-panel {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 26px;
+        box-shadow: var(--shadow);
+      }
+      .admin-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 24px;
+      }
+      .admin-box {
+        background: #f8fafc;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 18px;
+      }
+      .admin-box h3 {
+        margin-top: 0;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      input, select, textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid #d1d5db;
+        background: white;
+      }
+      textarea { min-height: 110px; resize: vertical; }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(150px, 1fr));
+        gap: 16px;
+        margin-bottom: 22px;
+      }
+      .stat-box {
+        background: #f8fafc;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 16px;
+      }
+      .stat-box .label {
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+      .stat-box .value {
+        margin-top: 10px;
+        font-size: 2rem;
+        font-weight: 900;
+      }
+
+      .admin-products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+        margin-top: 18px;
+      }
+      .admin-item {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 12px;
+      }
+      .admin-item img {
+        height: 120px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+      .admin-item h4 {
+        margin: 0 0 6px;
+      }
+      .delete-btn {
+        width: 100%;
+        margin-top: 10px;
+        border: none;
+        background: var(--danger);
+        color: white;
+        padding: 9px 12px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      .cart-drawer {
+        position: fixed;
+        top: 0;
+        right: -420px;
+        width: 380px;
+        height: 100vh;
+        background: white;
+        box-shadow: -12px 0 30px rgba(0,0,0,0.18);
+        transition: right 0.3s ease;
+        z-index: 50;
+        display: flex;
+        flex-direction: column;
+      }
+      .cart-drawer.open {
+        right: 0;
+      }
+      .cart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--line);
+      }
+      .close-btn {
+        border: none;
+        background: transparent;
+        font-size: 40px;
+        cursor: pointer;
+        line-height: 1;
+      }
+      .cart-items {
+        flex: 1;
+        overflow-y: auto;
+        padding: 18px 16px;
+      }
+      .cart-item {
+        display: flex;
+        gap: 12px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 10px;
+        margin-bottom: 12px;
+      }
+      .cart-item img {
+        width: 72px;
+        height: 72px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .cart-item h4 {
+        margin: 0 0 8px;
+      }
+      .qty-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .qty-controls {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .small-btn {
+        border: 1px solid var(--line);
+        background: white;
+        width: 22px;
+        height: 22px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .cart-footer {
+        border-top: 1px solid var(--line);
+        padding: 18px 16px 20px;
+      }
+      .total {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 800;
+        font-size: 1.2rem;
+        margin-bottom: 14px;
+      }
+      .empty-msg {
+        color: var(--muted);
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      footer {
+        background: #0b1020;
+        color: white;
+        padding: 22px 0;
+        text-align: center;
+      }
+
+      @media (max-width: 900px) {
+        .hero-grid, .admin-grid {
+          grid-template-columns: 1fr;
+        }
+        .features { grid-template-columns: repeat(2, minmax(180px, 1fr)); }
+        .stats { grid-template-columns: repeat(2, minmax(150px, 1fr)); }
+      }
+
+      @media (max-width: 640px) {
+        .nav {
+          flex-wrap: wrap;
+          gap: 12px;
+          padding: 16px 0;
+        }
+        .nav-links {
+          width: 100%;
+          justify-content: space-between;
+        }
+        .features, .stats {
+          grid-template-columns: 1fr;
+        }
+        .hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .cart-drawer {
+          width: 100%;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="brand">VELO</div>
+        <nav class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#products">Products</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#admin">Admin</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="btn btn-alt" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop</button>
+          <button class="cart-button" id="openCartBtn">
+            Cart
+            <span class="cart-badge" id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
 
-    <!-- Sidebar Navigation -->
-    <div class="sidebar">
-        <h2>orveena.in</h2>
-        <ul>
-            <li onclick="showTab('dashboard')">📊 डैशबोर्ड (Selling Info)</li>
-            <li onclick="showTab('add-product')">➕ नया प्रोडक्ट जोड़ें</li>
-            <li onclick="showTab('manage-products')">📦 प्रोडक्ट्स मैनेज करें</li>
-            <li onclick="showTab('payment-settings')">💳 पेमेंट गेटवे सेटिंग्स</li>
-        </ul>
-    </div>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Digital Growth Studio</span>
+          <h1>Build smarter with digital products that sell.</h1>
+          <p>
+            VELO provides premium digital resources for businesses and creators — from ebooks and templates to mega bundles designed for growth.
+          </p>
+          <div class="hero-actions">
+            <button class="btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Explore Products</button>
+            <button class="btn btn-alt" onclick="document.getElementById('admin').scrollIntoView({behavior:'smooth'})">Admin Panel</button>
+          </div>
 
-    <!-- Main Content Area -->
-    <div class="main-content">
-        <div class="header">
-            <h1>एडमिन कंट्रोल पैनल - orveena.in</h1>
+          <div class="hero-metrics">
+            <div class="metric">
+              <strong>500+</strong>
+              <span>Downloads</span>
+            </div>
+            <div class="metric">
+              <strong>4.9/5</strong>
+              <span>Rating</span>
+            </div>
+            <div class="metric">
+              <strong>24/7</strong>
+              <span>Access</span>
+            </div>
+          </div>
         </div>
 
-        <!-- 1. Selling Information / Dashboard -->
-        <div id="dashboard" class="tab-content">
-            <h2>बिक्री की जानकारी (Selling Information)</h2>
-            <br>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>कुल बिक्री (Total Sales)</h3>
-                    <p id="total-sales-count">124</p>
-                </div>
-                <div class="card" style="border-color: #3498db;">
-                    <h3>कुल कमाई (Total Revenue)</h3>
-                    <p id="total-revenue">₹ 61,880</p>
-                </div>
-                <div class="card" style="border-color: #f39c12;">
-                    <h3>कुल डिजिटल प्रोडक्ट्स</h3>
-                    <p id="total-products-count">2</p>
-                </div>
-            </div>
+        <div class="hero-panel">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="VELO digital products" />
+        </div>
+      </div>
+    </section>
 
-            <div class="section-box">
-                <h3>हाल ही में बेचे गए प्रोडक्ट्स (Recent Sales History)</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ऑर्डर ID</th>
-                            <th>ग्राहक का नाम</th>
-                            <th>प्रोडक्ट का नाम</th>
-                            <th>कीमत</th>
-                            <th>तारीख</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>#ORV-1024</td>
-                            <th>अमित कुमार</th>
-                            <td>डिजिटल बंडल Pack Vol 1</td>
-                            <td>₹ 499</td>
-                            <td>20 Oct 2026</td>
-                        </tr>
-                        <tr>
-                            <td>#ORV-1023</td>
-                            <th>राहुल वर्मा</th>
-                            <td>E-Commerce Design Template</td>
-                            <td>₹ 299</td>
-                            <td>20 Oct 2026</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>Why VELO</h2>
+          <p>Premium digital resources designed for fast growth.</p>
         </div>
 
-        <!-- 2. Add New Product -->
-        <div id="add-product" class="tab-content" style="display:none;">
-            <div class="section-box">
-                <h3>नया डिजिटल प्रोडक्ट जोड़ें (Add New Product)</h3>
-                <form id="add-product-form" onsubmit="addProduct(event)">
-                    <div class="form-group">
-                        <label>प्रोडक्ट का नाम (Product Name):</label>
-                        <input type="text" id="prod-title" placeholder="उदा. Digital Bundle Pack 2026" required>
-                    </div>
-                    <div class="form-group">
-                        <label>कीमत (Price in ₹):</label>
-                        <input type="number" id="prod-price" placeholder="499" required>
-                    </div>
-                    <div class="form-group">
-                        <label>विवरण (Description):</label>
-                        <textarea id="prod-desc" rows="4" placeholder="प्रोडक्ट की विशेषताएं यहाँ लिखें..." required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>डिजिटल फ़ाइल डाउनलोड लिंक (File Download URL / Google Drive Link):</label>
-                        <input type="url" id="prod-link" placeholder="https://drive.google.com/..." required>
-                    </div>
-                    <button type="submit" class="btn">प्रोडक्ट जोड़ें (Add Product)</button>
-                </form>
-            </div>
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">📦</div>
+            <h3>Instant Delivery</h3>
+            <p>Products delivered quickly to customer email after secure payment.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💡</div>
+            <h3>Practical Assets</h3>
+            <p>Ready-to-use business templates, ebooks, and digital packs.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Secure Checkout</h3>
+            <p>Supports secure payment flow with Razorpay integration.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🧠</div>
+            <h3>Lifetime Access</h3>
+            <p>Customers get lifetime access to their digital downloads.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-head">
+          <h2>Digital Product Bundles</h2>
+          <p>Perfect for founders, creators, and business builders.</p>
         </div>
 
-        <!-- 3. Manage & Delete Products -->
-        <div id="manage-products" class="tab-content" style="display:none;">
-            <div class="section-box">
-                <h3>सभी प्रोडक्ट्स की सूची (Manage / Delete Products)</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>आईडी</th>
-                            <th>प्रोडक्ट का नाम</th>
-                            <th>कीमत</th>
-                            <th>एक्शन (Action)</th>
-                        </tr>
-                    </thead>
-                    <tbody id="product-list-body">
-                        <!-- Dynamic content via JS -->
-                    </tbody>
-                </table>
-            </div>
+        <div id="productGrid" class="product-grid"></div>
+      </div>
+    </section>
+
+    <section class="review-section" id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <h2>Customer Reviews</h2>
+          <p>What buyers love about VELO.</p>
         </div>
 
-        <!-- 4. Payment Gateway Settings -->
-        <div id="payment-settings" class="tab-content" style="display:none;">
-            <div class="section-box">
-                <h3>पेमेंट गेटवे सेटिंग्स (Payment Gateway Setup)</h3>
-                <form onsubmit="savePaymentSettings(event)">
-                    <div class="form-group">
-                        <label>Razorpay Key ID:</label>
-                        <input type="text" id="razorpay-key" placeholder="rzp_live_xxxxxxxxxxxx">
-                    </div>
-                    <div class="form-group">
-                        <label>Razorpay Secret Key:</label>
-                        <input type="password" id="razorpay-secret" placeholder="****************">
-                    </div>
-                    <div class="form-group">
-                        <label>UPI ID (Direct Payment):</label>
-                        <input type="text" id="upi-id" placeholder="orveena@upi">
-                    </div>
-                    <button type="submit" class="btn">सेटिंग्स सेव करें (Save Gateway Settings)</button>
-                </form>
+        <div class="reviews">
+          <div class="review-card">
+            <div class="review-top">
+              <div class="review-name">Ayesha</div>
+              <div class="stars">★★★★★</div>
             </div>
+            <p>Very useful digital bundle. The files are clear, practical, and easy to use for my business.</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-top">
+              <div class="review-name">Rahul</div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <p>Great value. Business templates are professional and saved a lot of time.</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-top">
+              <div class="review-name">Safiya</div>
+              <div class="stars">★★★★★</div>
+            </div>
+            <p>Perfect for beginners. The ebook bundle is detailed and easy to understand.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="admin">
+      <div class="container">
+        <div class="section-head">
+          <h2>Admin Dashboard</h2>
+          <p>Manage products, orders, and digital assets.</p>
         </div>
 
-    </div>
+        <div class="admin-panel">
+          <div class="stats">
+            <div class="stat-box">
+              <div class="label">Products</div>
+              <div class="value" id="prodCount">0</div>
+            </div>
+            <div class="stat-box">
+              <div class="label">Orders</div>
+              <div class="value" id="orderCount">0</div>
+            </div>
+            <div class="stat-box">
+              <div class="label">Revenue</div>
+              <div class="value" id="revCount">₹0</div>
+            </div>
+            <div class="stat-box">
+              <div class="label">Reviews</div>
+              <div class="value" id="reviewCount">0</div>
+            </div>
+          </div>
+
+          <div class="admin-grid">
+            <div class="admin-box">
+              <h3>Add Product</h3>
+              <form id="productForm">
+                <input type="text" id="productName" value="Business Mega Bundle" placeholder="Product name" required />
+                <input type="number" id="productPrice" placeholder="Price" min="0" required />
+                <input type="text" id="productCategory" placeholder="Category" required />
+                <input type="text" id="productImage" placeholder="Image URL" required />
+                <textarea id="productDesc" placeholder="Description" required></textarea>
+                <button class="btn" type="submit">Add Product</button>
+              </form>
+            </div>
+
+            <div class="admin-box">
+              <h3>Product List</h3>
+              <div id="adminList" class="admin-products"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 VELO DIGITAL PRODUCTS • All rights reserved
+    </footer>
+
+    <aside class="cart-drawer" id="cartDrawer">
+      <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button class="close-btn" id="closeCartBtn">&times;</button>
+      </div>
+
+      <div class="cart-items" id="cartItems"></div>
+
+      <div class="cart-footer">
+        <div class="total">
+          <span>Total</span>
+          <span id="cartTotal">₹0</span>
+        </div>
+        <button class="btn" style="width:100%;" id="checkoutBtn">Checkout</button>
+      </div>
+    </aside>
 
     <script>
-        // Sample stored products
-        let products = [
-            { id: 1, name: "डिजिटल बंडल Pack Vol 1", price: 499, link: "https://drive.google.com/bundle1" },
-            { id: 2, name: "E-Commerce Design Template", price: 299, link: "https://drive.google.com/template1" }
-        ];
+      const STORAGE_KEY = "velo_store_data";
 
-        // Tab Switching Logic
-        function showTab(tabId) {
-            let tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => tab.style.display = 'none');
-            document.getElementById(tabId).style.display = 'block';
-            if (tabId === 'manage-products') {
-                renderProducts();
-            }
+      let products = JSON.parse(localStorage.getItem(STORAGE_KEY))?.products || [
+        {
+          id: 1,
+          name: "Ebook Bundle",
+          price: 199,
+          category: "Ebook",
+          image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+          desc: "Startup, marketing, and business success ebooks in one bundle."
+        },
+        {
+          id: 2,
+          name: "Template Bundle",
+          price: 299,
+          category: "Templates",
+          image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55b?auto=format&fit=crop&w=1200&q=80",
+          desc: "Editable templates for business, branding, and social content."
+        },
+        {
+          id: 3,
+          name: "Business Bundle",
+          price: 399,
+          category: "Business",
+          image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+          desc: "A carefully designed bundle for business foundations and growth."
+        },
+        {
+          id: 4,
+          name: "Business Mega Bundle",
+          price: 499,
+          category: "Mega Bundle",
+          image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+          desc: "Complete premium bundle for business planning, marketing, and execution."
+        }
+      ];
+
+      let cart = JSON.parse(localStorage.getItem(STORAGE_KEY))?.cart || [];
+
+      function saveData() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({ products, cart }));
+      }
+
+      function renderProducts() {
+        const grid = document.getElementById("productGrid");
+        grid.innerHTML = "";
+
+        products.forEach(product => {
+          const card = document.createElement("div");
+          card.className = "product-card";
+          card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" />
+            <div class="product-info">
+              <h3>${product.name}</h3>
+              <div class="product-meta">
+                <span>${product.category}</span>
+                <span class="stars">★★★★★</span>
+              </div>
+              <p class="price">₹${product.price}</p>
+              <p style="color:#475569; line-height:1.7; margin:0 0 18px;">${product.desc}</p>
+              <div class="product-actions">
+                <button class="btn add-btn" data-id="${product.id}">Add to Cart</button>
+                <button class="btn btn-light" type="button">Preview</button>
+              </div>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+
+        document.querySelectorAll(".add-btn").forEach(btn => {
+          btn.addEventListener("click", () => addToCart(Number(btn.dataset.id)));
+        });
+      }
+
+      function renderAdminList() {
+        const list = document.getElementById("adminList");
+        list.innerHTML = "";
+        products.forEach(product => {
+          const item = document.createElement("div");
+          item.className = "admin-item";
+          item.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" />
+            <h4>${product.name}</h4>
+            <div class="small" style="color:#475569;">₹${product.price}</div>
+            <button class="delete-btn" data-id="${product.id}">Delete</button>
+          `;
+          list.appendChild(item);
+        });
+
+        document.querySelectorAll(".delete-btn").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const id = Number(btn.dataset.id);
+            products = products.filter(p => p.id !== id);
+            cart = cart.filter(item => item.id !== id);
+            saveData();
+            renderAll();
+          });
+        });
+      }
+
+      function addToCart(productId) {
+        const existing = cart.find(item => item.id === productId);
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({ id: productId, qty: 1 });
+        }
+        saveData();
+        renderCart();
+        updateCartBadge();
+      }
+
+      function changeQty(productId, nextQty) {
+        if (nextQty <= 0) {
+          cart = cart.filter(item => item.id !== productId);
+        } else {
+          const item = cart.find(i => i.id === productId);
+          if (item) item.qty = nextQty;
+        }
+        saveData();
+        renderCart();
+        updateCartBadge();
+      }
+
+      function updateCartBadge() {
+        const count = cart.reduce((sum, item) => sum + item.qty, 0);
+        document.getElementById("cartCount").textContent = count;
+      }
+
+      function renderCart() {
+        const cartItemsEl = document.getElementById("cartItems");
+        const cartTotalEl = document.getElementById("cartTotal");
+
+        if (cart.length === 0) {
+          cartItemsEl.innerHTML = '<div class="empty-msg">Your cart is empty.</div>';
+          cartTotalEl.textContent = "₹0";
+          return;
         }
 
-        // Render Product List
-        function renderProducts() {
-            let tbody = document.getElementById('product-list-body');
-            tbody.innerHTML = '';
-            products.forEach((prod, index) => {
-                tbody.innerHTML += `
-                    <tr>
-                        <td>${index + 1}</td>
-                        <td>${prod.name}</td>
-                        <td>₹ ${prod.price}</td>
-                        <td>
-                            <button class="btn btn-danger" onclick="deleteProduct(${prod.id})">🗑️ डिलीट करें</button>
-                        </td>
-                    </tr>
-                `;
-            });
-            document.getElementById('total-products-count').innerText = products.length;
-        }
+        let total = 0;
 
-        // Add Product
-        function addProduct(e) {
-            e.preventDefault();
-            let title = document.getElementById('prod-title').value;
-            let price = document.getElementById('prod-price').value;
-            let link = document.getElementById('prod-link').value;
+        cartItemsEl.innerHTML = "";
 
-            let newProduct = {
-                id: Date.now(),
-                name: title,
-                price: price,
-                link: link
-            };
+        cart.forEach(item => {
+          const product = products.find(p => p.id === item.id);
+          if (!product) return;
 
-            products.push(newProduct);
-            alert("बधाई हो भाई! नया प्रोडक्ट सफलतापूर्वक जोड़ दिया गया है।");
-            document.getElementById('add-product-form').reset();
-            showTab('manage-products');
-        }
+          total += product.price * item.qty;
 
-        // Delete Product
-        function deleteProduct(id) {
-            if (confirm("क्या आप वाकई इस प्रोडक्ट को डिलीट करना चाहते हैं?")) {
-                products = products.filter(prod => prod.id !== id);
-                renderProducts();
-                alert("प्रोडक्ट डिलीट कर दिया गया है।");
-            }
-        }
+          const row = document.createElement("div");
+          row.className = "cart-item";
+          row.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" />
+            <div style="flex:1;">
+              <h4>${product.name}</h4>
+              <div style="color:#475569; font-size:13px;">₹${product.price}</div>
+              <div class="qty-row">
+                <div class="qty-controls">
+                  <button class="small-btn" data-type="minus" data-id="${product.id}">-</button>
+                  <span>${item.qty}</span>
+                  <button class="small-btn" data-type="plus" data-id="${product.id}">+</button>
+                </div>
+                <button class="delete-btn" data-type="remove" data-id="${product.id}" style="width:auto; margin-top:0; padding:6px 10px;">Remove</button>
+              </div>
+            </div>
+          `;
 
-        // Save Payment Settings
-        function savePaymentSettings(e) {
-            e.preventDefault();
-            alert("पेमेंट गेटवे की सेटिंग्स सेव हो गई हैं!");
-        }
+          cartItemsEl.appendChild(row);
+        });
 
-        // Initial Load
+        document.getElementById("cartTotal").textContent = `₹${total}`;
+
+        document.querySelectorAll("[data-type='plus']").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const id = Number(btn.dataset.id);
+            const item = cart.find(i => i.id === id);
+            changeQty(id, item ? item.qty + 1 : 1);
+          });
+        });
+
+        document.querySelectorAll("[data-type='minus']").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const id = Number(btn.dataset.id);
+            const item = cart.find(i => i.id === id);
+            if (item) changeQty(id, item.qty - 1);
+          });
+        });
+
+        document.querySelectorAll("[data-type='remove']").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const id = Number(btn.dataset.id);
+            changeQty(id, 0);
+          });
+        });
+      }
+
+      function updateStats() {
+        document.getElementById("prodCount").textContent = products.length;
+        document.getElementById("orderCount").textContent = "24";
+        document.getElementById("revCount").textContent = "₹" + products.reduce((sum, p) => sum + p.price * 10, 0).toLocaleString('en-IN');
+        document.getElementById("reviewCount").textContent = "120+";
+      }
+
+      function renderAll() {
         renderProducts();
+        renderAdminList();
+        renderCart();
+        updateCartBadge();
+        updateStats();
+      }
+
+      document.getElementById("productForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const newProduct = {
+          id: Date.now(),
+          name: document.getElementById("productName").value,
+          price: Number(document.getElementById("productPrice").value),
+          category: document.getElementById("productCategory").value,
+          image: document.getElementById("productImage").value,
+          desc: document.getElementById("productDesc").value
+        };
+
+        products.push(newProduct);
+        saveData();
+        renderAll();
+        this.reset();
+      });
+
+      document.getElementById("openCartBtn").addEventListener("click", () => {
+        document.getElementById("cartDrawer").classList.add("open");
+      });
+
+      document.getElementById("closeCartBtn").addEventListener("click", () => {
+        document.getElementById("cartDrawer").classList.remove("open");
+      });
+
+      document.getElementById("checkoutBtn").addEventListener("click", () => {
+        if (cart.length === 0) {
+          alert("Cart empty hai. Product add karo.");
+          return;
+        }
+        alert("Payment flow ready. Real Razorpay + email delivery backend baad me add hoga.");
+      });
+
+      renderAll();
     </script>
-</body>
-</html>
+  </body>
+</html>const reviewStorageKey = "velo_customer_reviews";
+const reviewForm = document.getElementById("reviewForm");
+const reviewList = document.getElementById("reviewList");
+
+function showReviews() {
+  const reviews = JSON.parse(localStorage.getItem(reviewStorageKey) || "[]");
+  reviewList.replaceChildren();
+
+  reviews.forEach((review) => {
+    const card = document.createElement("article");
+    const name = document.createElement("strong");
+    const stars = document.createElement("div");
+    const text = document.createElement("p");
+
+    name.textContent = review.name;
+    stars.textContent = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+    stars.setAttribute("aria-label", `${review.rating} out of 5 stars`);
+    text.textContent = review.text;
+
+    card.append(name, stars, text);
+    reviewList.appendChild(card);
+  });
+}
+
+reviewForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const reviews = JSON.parse(localStorage.getItem(reviewStorageKey) || "[]");
+  reviews.unshift({
+    name: document.getElementById("reviewName").value.trim(),
+    rating: Number(document.getElementById("reviewRating").value),
+    text: document.getElementById("reviewText").value.trim()
+  });
+
+  localStorage.setItem(reviewStorageKey, JSON.stringify(reviews));
+  reviewForm.reset();
+  showReviews();const STORAGE_KEY = "velo_store_data";
+
+let products = JSON.parse(localStorage.getItem(STORAGE_KEY))?.products || [
+  {
+    id: 1,
+    name: "Ebook Bundle",
+    price: 199,
+    category: "Ebook",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    desc: "Startup, marketing, and business success ebooks in one bundle."
+  },
+  {
+    id: 2,
+    name: "Template Bundle",
+    price: 299,
+    category: "Templates",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55b?auto=format&fit=crop&w=1200&q=80",
+    desc: "Editable templates for business, branding, and social content."
+  },
+  {
+    id: 3,
+    name: "Business Bundle",
+    price: 399,
+    category: "Business",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
+    desc: "A carefully designed bundle for business foundations and growth."
+  },
+  {
+    id: 4,
+    name: "Business Mega Bundle",
+    price: 499,
+    category: "Mega Bundle",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+    desc: "Complete premium bundle for business planning, marketing, and execution."
+  }
+];
+
+function saveData() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({ products, cart: JSON.parse(localStorage.getItem(STORAGE_KEY))?.cart || [] }));
+}
+
+function renderAdminList() {
+  const list = document.getElementById("adminList");
+  list.innerHTML = "";
+  products.forEach(product => {
+    const item = document.createElement("div");
+    item.className = "admin-item";
+    item.innerHTML = `
+      <img src="${product.image}" alt="${product.name}" />
+      <h4>${product.name}</h4>
+      <div class="small" style="color:#475569;">₹${product.price}</div>
+      <button class="delete-btn" data-id="${product.id}">Delete</button>
+    `;
+    list.appendChild(item);
+  });
+
+  document.querySelectorAll(".delete-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = Number(btn.dataset.id);
+      products = products.filter(p => p.id !== id);
+      saveData();
+      renderAll();
+    });
+  });
+}
+
+function updateStats() {
+  document.getElementById("prodCount").textContent = products.length;
+  document.getElementById("orderCount").textContent = "24";
+  document.getElementById("revCount").textContent = "₹" + products.reduce((sum, p) => sum + p.price * 10, 0).toLocaleString('en-IN');
+  document.getElementById("reviewCount").textContent = "120+";
+}
+
+document.getElementById("productForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const newProduct = {
+    id: Date.now(),
+    name: document.getElementById("productName").value,
+    price: Number(document.getElementById("productPrice").value),
+    category: document.getElementById("productCategory").value,
+    image: document.getElementById("productImage").value,
+    desc: document.getElementById("productDesc").value
+  };
+
+  products.push(newProduct);
+  saveData();
+  renderAll();
+  this.reset();
+});
+
+function renderAll() {
+  renderAdminList();
+  updateStats();
+}
+
+renderAll();
+});
+
+showReviews();
